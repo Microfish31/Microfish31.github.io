@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <link>https://microfish31.github.io/</link>
-    <description>Recent content on </description>
+    <title>trip on </title>
+    <link>https://microfish31.github.io/tags/trip/</link>
+    <description>Recent content in trip on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 04 Feb 2024 00:10:49 +0800</lastBuildDate><atom:link href="https://microfish31.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Feb 2024 00:10:49 +0800</lastBuildDate><atom:link href="https://microfish31.github.io/tags/trip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[2023京阪行] - 心得</title>
       <link>https://microfish31.github.io/post/2023%E4%BA%AC%E9%98%AA%E8%A1%8C-%E5%BF%83%E5%BE%97/</link>
@@ -36,28 +36,6 @@
       <guid>https://microfish31.github.io/post/2023%E4%BA%AC%E9%98%AA%E8%A1%8C-%E8%A6%8F%E5%8A%83/</guid>
       
         <description>&lt;p&gt;好的旅程由規畫開始 ~&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://microfish31.github.io/about/</link>
-      <pubDate>Sat, 03 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://microfish31.github.io/about/</guid>
-      
-        <description>Myself</description>
-      
-    </item>
-    
-    <item>
-      <title>First Start</title>
-      <link>https://microfish31.github.io/post/first-start/</link>
-      <pubDate>Wed, 18 Oct 2023 16:33:47 +0000</pubDate>
-      
-      <guid>https://microfish31.github.io/post/first-start/</guid>
-      
-        <description>This is a good start.</description>
       
     </item>
     
