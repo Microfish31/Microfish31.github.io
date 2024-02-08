@@ -5,6 +5,7 @@
     <link>https://microfish31.github.io/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://microfish31.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <copyright>2024-{{ YEAR }}</copyright><atom:link href="https://microfish31.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

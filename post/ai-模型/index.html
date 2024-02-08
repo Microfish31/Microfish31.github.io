@@ -192,7 +192,7 @@
 
     ,
         "url" : "https:\/\/microfish31.github.io\/post\/ai-%E6%A8%A1%E5%9E%8B\/",
-        "wordCount" : "156",
+        "wordCount" : "224",
         "genre" : [ ],
         "keywords" : [ ]
     }
@@ -248,7 +248,13 @@
     src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
     integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
     crossorigin="anonymous"
-  ></script></div>
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
 </aside>
       <main
         
@@ -320,6 +326,21 @@
             
             <a
               
+              href="/portfolio/"
+              
+              title=""
+              >Portfolio</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
               href="/contact/"
               
               title=""
@@ -368,7 +389,7 @@
           </li>
           <li class="post__meta-item">
             <em class="fas fa-stopwatch post__meta-icon"></em>
-            <span class="post__meta-text">One-minute read</span>
+            <span class="post__meta-text">2-minute read</span>
           </li>
         </ul>
       <p>Let&rsquo;s talk about AI model.</p>
@@ -378,12 +399,22 @@ Nervous system -&gt; Neural Network<br>
 人體 -&gt; AI 模型</p>
 <h2 id="perceptron">Perceptron</h2>
 <ul>
-<li>Inputs</li>
-<li>Weights</li>
-<li>Bias</li>
-<li>Activation</li>
-<li>Output</li>
+<li>Inputs  (\(x_i\))<br>
+即 feature。</li>
+<li>Weights (\(w_i\))<br>
+每個 feature 對預測的幫助程度</li>
+<li>Bias (b)<br>
+即 判斷標準。</li>
+<li>Activation
+依照分數和標準判斷結果的函數。</li>
+<li>Output<br>
+經過 Activation 出來的預測結果。</li>
 </ul>
+<h3 id="formula">Formula</h3>
+<p>$$
+\sum _{i=1}^m w_i \times x_i + b &gt;= 0
+$$</p>
+<hr>
 <h2 id="layer">Layer</h2>
 <p>每個 Layer 包含多個 Perceptron</p>
 <h2 id="neural-network">Neural Network</h2>
@@ -394,10 +425,10 @@ Nervous system -&gt; Neural Network<br>
 <li>Output Layer</li>
 </ul>
 <p>Hidden layer 的層數，單層叫做 Shallow Neural Network。 <br>
-多層叫做  Deep Neural Network ，即可稱之為 Deep Learning。</p>
+多層叫做  Deep Neural Network ，即可稱之為 <mark>Deep Learning</mark>。</p>
 <p>由於一個 Perceptron 是 Binary Classifier，只能做二元線性分類。 <br>
 要想要分類更多種，以達到非線性分類就是添加更多的 Layer。<br>
-達到  Multiclass Classification。 即構成 Neural Network</p>
+達到  Multiclass Classification。 即構成 Neural Network。</p>
 <h2 id="model-task">Model Task</h2>
 <p>以電腦視覺(Computer Vision)領域來說，模型主要會有以下任務類型:</p>
 <ol>
@@ -463,13 +494,22 @@ Nervous system -&gt; Neural Network<br>
 </li>
 </ol>
 <h2 id="model-learning-categories">Model Learning Categories</h2>
+<p>以下以電腦視覺領域說明:</p>
 <ol>
-<li>Supervised learning
-以電腦視覺來說，圖片會需要做 label，提供機器學習在輸出時判斷誤差使用。</li>
-<li>Un-supervised learning</li>
-<li>Semi-supervised learning</li>
-<li>Reinforcement learning</li>
-<li>Transfer Learning</li>
+<li>Supervised learning<br>
+圖片資料集會需要做 label，提供 Neural Network 在輸出時判斷誤差使用。<br>
+通常 accuracy 較高。</li>
+<li>Un-supervised learning<br>
+圖片資料集不需要做 label，Neural Network 會自行尋找 feature 並且分類。<br>
+通常 accuracy 較低。</li>
+<li>Semi-supervised learning<br>
+僅需少部分圖片資料集做 label。算是 Supervised learning 與 Un-supervised learning 的折衷。
+accuracy 應介於前述之間。</li>
+<li>Reinforcement learning<br>
+圖片資料集不需要做 label，根據反饋的好壞，Neural Network 自行逐步修正、最終得到正確的結果。
+舉例: 把貓的照片預測成狗，人給出結果是錯的。Neural Network 會再次辨認 feature 及分類。透過逐次正確與錯誤的學習反饋，提升 accuracy。</li>
+<li>Transfer Learning<br>
+Neural Network 保留 feature 部分，分類部分則是減掉。接著重新訓練分類部分。</li>
 </ol></div>
     <div class="post__footer">
       
@@ -505,5 +545,11 @@ Nervous system -&gt; Neural Network<br>
     src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
     integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
     crossorigin="anonymous"
-  ></script></body>
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
 </html>
