@@ -18,7 +18,7 @@
   </title>
 
   
-  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.92.2" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.122.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="author" content="Microfish" />
   <meta
     name="description"
@@ -92,8 +92,8 @@
   
   <script
     type="text/javascript"
-    src="/js/anatole-header.min.46e6a54097480084f8f52c20ca1aa7425b4fad17029a887fd4017b12e311a72d.js"
-    integrity="sha256-RualQJdIAIT49SwgyhqnQltPrRcCmoh/1AF7EuMRpy0="
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
     crossorigin="anonymous"
   ></script>
 
@@ -102,8 +102,8 @@
     
     <script
       type="text/javascript"
-      src="/js/anatole-theme-switcher.min.4c31f3cf7e8e609c897dba88aecac0e8db1ebb4e5c841d3f9ffb01d463973678.js"
-      integrity="sha256-TDHzz36OYJyJfbqIrsrA6Nseu05chB0/n/sB1GOXNng="
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
       crossorigin="anonymous"
     ></script>
   
@@ -112,15 +112,14 @@
 
 
   
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="[AI] - 模型"/>
-<meta name="twitter:description" content=""/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="[AI] - 模型"/>
+<meta name="twitter:description" content="Let&rsquo;s talk about AI model."/>
 
 
 
   
   <meta property="og:title" content="[AI] - 模型" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Let&rsquo;s talk about AI model." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://microfish31.github.io/post/ai-%E6%A8%A1%E5%9E%8B/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2024-02-07T04:58:58+00:00" />
@@ -143,14 +142,14 @@
         "alternativeHeadline": "",
         "description": "
       
-        
+        \u003cp\u003eLet\u0026rsquo;s talk about AI model.\u003c\/p\u003e
 
 
       
 
 
     ",
-        "inLanguage": "en-us",
+        "inLanguage": "en",
         "isFamilyFriendly": "true",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -193,7 +192,7 @@
 
     ,
         "url" : "https:\/\/microfish31.github.io\/post\/ai-%E6%A8%A1%E5%9E%8B\/",
-        "wordCount" : "45",
+        "wordCount" : "141",
         "genre" : [ ],
         "keywords" : [ ]
     }
@@ -246,8 +245,8 @@
   
   <script
     type="text/javascript"
-    src="/js/medium-zoom.min.fae9ac8895995fe91958b3954be11e96025824a04770726a3531e119ddd2d576.js"
-    integrity="sha256-&#43;umsiJWZX&#43;kZWLOVS&#43;EelgJYJKBHcHJqNTHhGd3S1XY="
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
     crossorigin="anonymous"
   ></script></div>
 </aside>
@@ -372,10 +371,11 @@
             <span class="post__meta-text">One-minute read</span>
           </li>
         </ul>
-      <h2 id="模型架構">模型架構</h2>
-<p>人體  AI模型<br>
+      <p>Let&rsquo;s talk about AI model.</p>
+<h2 id="model-structure">Model Structure</h2>
+<p>Neuron -&gt; Perceptron<br>
 Nervous system -&gt; Neural Network<br>
-Neuron -&gt; Perceptron</p>
+人體 -&gt; AI 模型</p>
 <h2 id="perceptron">Perceptron</h2>
 <ul>
 <li>Inputs</li>
@@ -384,12 +384,84 @@ Neuron -&gt; Perceptron</p>
 <li>Activation</li>
 <li>Output</li>
 </ul>
-<p>由於一個 Perceptron 是 Binary Classifier，只能做二元線性分類。<br>
-要想要分類更多種，以達到非線性分類就是添加更多層的 Perception。<br>
-達到  multiclass classification 。 即構成 Neural Network。</p>
 <h2 id="layer">Layer</h2>
-<p>Hidden layer 的層數，單層叫做 Shallow Neural Network。
-多層叫做  Deep Neural Network ，即可以叫做 Deep Learning。</p></div>
+<p>每個 Layer 包含多個 Perceptron</p>
+<h2 id="neural-network">Neural Network</h2>
+<p>一個基礎的 Neural Network 包含 :</p>
+<ul>
+<li>Input Layer</li>
+<li>Hidden Layer</li>
+<li>Output Layer</li>
+</ul>
+<p>Hidden layer 的層數，單層叫做 Shallow Neural Network。 <br>
+多層叫做  Deep Neural Network ，即可稱之為 Deep Learning。</p>
+<p>由於一個 Perceptron 是 Binary Classifier，只能做二元線性分類。 <br>
+要想要分類更多種，以達到非線性分類就是添加更多的 Layer。<br>
+達到  Multiclass Classification。 即構成 Neural Network</p>
+<h2 id="model-task">Model Task</h2>
+<p>以電腦視覺(Computer Vision)領域來說，模型主要會有以下任務類型:</p>
+<ol>
+<li>Classification<br>
+模型會分類貓或是狗</li>
+<li>Object Detection<br>
+模型會框出貓</li>
+<li>Segmentation<br>
+模型會框出貓輪廓</li>
+</ol>
+<h2 id="model-categories">Model Categories</h2>
+<ol>
+<li>神經網絡模型
+<ul>
+<li>深度神經網絡（Deep Neural Networks，DNN）</li>
+<li>卷積神經網絡（Convolutional Neural Networks，CNN）</li>
+<li>循環神經網絡（Recurrent Neural Networks，RNN）</li>
+<li>生成對抗網絡（Generative Adversarial Networks，GAN）</li>
+</ul>
+</li>
+<li>傳統機器學習模型
+<ul>
+<li>支持向量機（Support Vector Machines，SVM）</li>
+<li>決策樹（Decision Trees）</li>
+<li>隨機森林（Random Forests）</li>
+<li>貝葉斯分類器（Naive Bayes）</li>
+<li>K最近鄰算法（K-Nearest Neighbors，KNN）</li>
+</ul>
+</li>
+<li>強化學習模型
+<ul>
+<li>Q學習（Q-Learning）</li>
+<li>深度強化學習（Deep Reinforcement Learning）</li>
+</ul>
+</li>
+<li>自然語言處理模型
+<ul>
+<li>循環神經網絡（RNN）</li>
+<li>長短期記憶網絡（Long Short-Term Memory，LSTM）</li>
+<li>注意力機制模型（Attention Mechanism）</li>
+<li>語言模型（Language Models）</li>
+<li>BERT（Bidirectional Encoder Representations from Transformers）</li>
+</ul>
+</li>
+<li>圖像處理模型
+<ul>
+<li>卷積神經網絡（CNN）</li>
+<li>卷積自編碼器（Convolutional Autoencoders）</li>
+<li>生成對抗網絡（GAN）</li>
+</ul>
+</li>
+<li>推薦系統模型：
+<ul>
+<li>協同過濾（Collaborative Filtering）</li>
+<li>基於內容的過濾（Content-Based Filtering）</li>
+<li>混合推薦系統（Hybrid Recommender Systems）</li>
+</ul>
+</li>
+<li>混合模型：
+<ul>
+<li>同時結合多種類型的模型以解決複雜問題。</li>
+</ul>
+</li>
+</ol></div>
     <div class="post__footer">
       
 
@@ -421,8 +493,8 @@ Neuron -&gt; Perceptron</p>
   
   <script
     type="text/javascript"
-    src="/js/medium-zoom.min.fae9ac8895995fe91958b3954be11e96025824a04770726a3531e119ddd2d576.js"
-    integrity="sha256-&#43;umsiJWZX&#43;kZWLOVS&#43;EelgJYJKBHcHJqNTHhGd3S1XY="
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
     crossorigin="anonymous"
   ></script></body>
 </html>
