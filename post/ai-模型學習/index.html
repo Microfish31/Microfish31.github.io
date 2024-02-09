@@ -192,7 +192,7 @@
 
     ,
         "url" : "https:\/\/microfish31.github.io\/post\/ai-%E6%A8%A1%E5%9E%8B%E5%AD%B8%E7%BF%92\/",
-        "wordCount" : "108",
+        "wordCount" : "156",
         "genre" : [ ],
         "keywords" : [ 
       
@@ -418,10 +418,30 @@ $$</p>
 <p>針對多個 Perceptrons 提取多個 feature 的公式。<br>
 也代表一個 Layer 的正向傳播(feed-forward)。</p>
 <p>Simplify by Matrix:</p>
+<p>$$
+\begin{bmatrix}
+a &amp; b \
+c &amp; d
+\end{bmatrix}
+$$</p>
 <h3 id="consideration-why-can-we-include-input-data-such-as-photos-texts-and-voices-in-the-neural-network">Consideration: Why can we include input data such as photos, texts, and voices in the neural network?</h3>
 <p>只要能夠將圖片、聲音、文字轉成向量形式，就可以使用神經網路開始訓練。</p>
-<h2 id="activation">Activation</h2>
-<photo></div>
+<h2 id="activation-function">Activation Function</h2>
+<p>Step function 屬於 non-linear function，但是其 derivative 並不適合訓練。即代表回饋也會是 0。</p>
+<p>Sigmoid,Tanh,ReLU 屬於 linear function，其 derivative 適合訓練。</p>
+<h3 id="sigmoid">Sigmoid</h3>
+<photo>
+<h3 id="tanh">Tanh</h3>
+<photo>
+<h3 id="relu">ReLU</h3>
+<photo>
+<h2 id="softmax-fuction">Softmax Fuction</h2>
+<p>用於 Classification。
+目的是將 Last layer 得出的分數轉換為 Probability，使其值範圍介於 0~1 之間。</p>
+<h3 id="formula">Formula</h3>
+<p>$$
+\sigma(z_i) = \tfrac{e^z_i}{\sum _{i=1}^c} e^z_i
+$$</p></div>
     <div class="post__footer">
       
 
