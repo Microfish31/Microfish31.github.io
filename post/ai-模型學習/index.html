@@ -192,7 +192,7 @@
 
     ,
         "url" : "https:\/\/microfish31.github.io\/post\/ai-%E6%A8%A1%E5%9E%8B%E5%AD%B8%E7%BF%92\/",
-        "wordCount" : "156",
+        "wordCount" : "247",
         "genre" : [ ],
         "keywords" : [ 
       
@@ -393,7 +393,7 @@
           </li>
           <li class="post__meta-item">
             <em class="fas fa-stopwatch post__meta-icon"></em>
-            <span class="post__meta-text">One-minute read</span>
+            <span class="post__meta-text">2-minute read</span>
           </li>
         </ul>
       <p>Elaborating on Model Learning.</p>
@@ -424,24 +424,58 @@ a &amp; b \
 c &amp; d
 \end{bmatrix}
 $$</p>
-<h3 id="consideration-why-can-we-include-input-data-such-as-photos-texts-and-voices-in-the-neural-network">Consideration: Why can we include input data such as photos, texts, and voices in the neural network?</h3>
+<h3 id="consideration">Consideration</h3>
+<p>Why can we include input data such as photos, texts, and voices in the neural network?</p>
 <p>只要能夠將圖片、聲音、文字轉成向量形式，就可以使用神經網路開始訓練。</p>
 <h2 id="activation-function">Activation Function</h2>
 <p>Step function 屬於 non-linear function，但是其 derivative 並不適合訓練。即代表回饋也會是 0。</p>
 <p>Sigmoid,Tanh,ReLU 屬於 linear function，其 derivative 適合訓練。</p>
 <h3 id="sigmoid">Sigmoid</h3>
-<photo>
+<p>$$
+\begin{aligned}
+f(x) = \frac{1}{1 + e^{-x}}
+\end{aligned}
+$$</p>
+<iframe src="https://www.desmos.com/calculator/4h1y1g53yk?embed" width="250" height="250" style="border: 1px solid #ccc" frameborder=0></iframe>
 <h3 id="tanh">Tanh</h3>
-<photo>
+<p>$$
+f(x) = \tanh(x)
+$$</p>
+<iframe src="https://www.desmos.com/calculator/ufpstec3is?embed" width="250" height="250" style="border: 1px solid #ccc" frameborder=0></iframe>
 <h3 id="relu">ReLU</h3>
-<photo>
+<p>$$
+y=\max\left(0,x\right)
+$$</p>
+<iframe src="https://www.desmos.com/calculator/hy2acjl6je?embed" width="250" height="250" style="border: 1px solid #ccc" frameborder=0></iframe>
 <h2 id="softmax-fuction">Softmax Fuction</h2>
 <p>用於 Classification。
 目的是將 Last layer 得出的分數轉換為 Probability，使其值範圍介於 0~1 之間。</p>
 <h3 id="formula">Formula</h3>
 <p>$$
-\sigma(z_i) = \tfrac{e^z_i}{\sum _{i=1}^c} e^z_i
-$$</p></div>
+\sigma(\mathbf{z})_j = \tfrac{e^{z_j}}{\sum _{k=1}^K e^{z_j}} \quad \text{ , for } j = 1,2 \cdots K
+$$</p>
+<p>K: the number of categories</p>
+<h2 id="prediction">Prediction</h2>
+<p>經過 Activation Function 之後即可取得預測值以及誤差。
+並且把 error back-forward 給 Neural Network</p>
+<h2 id="loss-function">Loss Function</h2>
+<p>在說 Loss 之前，我們需要先認識 MSE,RMSE。</p>
+<p>Mean Square Error:
+$$
+MSE = \tfrac{1}{n} \sum _{i=1}^n (\mathbf{x_i} -  \mathbf{\hat{x}})
+$$
+<photo></p>
+<p>我們可以使用 MSE 畫出 Loss Curve ，並且在學習過程中找出最小值。</p>
+<p>Root Mean Square Error:
+$$
+RMSE = \sqrt{MSE}
+$$
+<photo></p>
+<p>Mean Absolute Error:<br>
+$$
+MAE = \tfrac{1}{n} \sum _{i=1}^n \left|(\mathbf{x_i} -  \mathbf{\hat{x}}) \right|
+$$
+<photo></p></div>
     <div class="post__footer">
       
 
