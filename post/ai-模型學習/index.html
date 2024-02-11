@@ -192,7 +192,7 @@
 
     ,
         "url" : "https:\/\/microfish31.github.io\/post\/ai-%E6%A8%A1%E5%9E%8B%E5%AD%B8%E7%BF%92\/",
-        "wordCount" : "247",
+        "wordCount" : "335",
         "genre" : [ ],
         "keywords" : [ 
       
@@ -402,7 +402,7 @@
 <p>針對一個 Perceptron 依照權重提取 feature 的分數
 前篇所述的公式，可以做以下的簡化:
 $$
-\sum _{i=1}^m w_i \times x_i + b = \sum _{i=1}^m w_i \times x_i + b*1 = \sum _{i=0}^m w_i \times x_i \quad \text{, where } w_m=b, x_m=1
+\sum _{i=1}^m w_i \times x_i + b = \sum _{i=1}^m w_i \times x_i + b \times 1 = \sum _{i=0}^m w_i \times x_i \quad \text{, where } w_m=b, x_m=1
 $$</p>
 <p>Simplify by Dot Product:
 $$
@@ -410,8 +410,13 @@ $$
 \begin{bmatrix}
 w_0 &amp; w_1 &amp; \cdots &amp; w_m
 \end{bmatrix}
-\begin{bmatrix} x_0 \ x_1 \ \vdots \ x_m \end{bmatrix} =
-\mathbf{w} \cdot \mathbf{x}
+\begin{bmatrix}
+x_0 \\
+x_1 \\
+\vdots \\
+x_m
+\end{bmatrix} =
+\mathbf{w} \cdot \mathbf{x} = \mathbf{z}
 $$</p>
 <photo>
 <h3 id="multiple-perceptrons">Multiple Perceptrons</h3>
@@ -420,16 +425,40 @@ $$</p>
 <p>Simplify by Matrix:</p>
 <p>$$
 \begin{bmatrix}
-a &amp; b \
-c &amp; d
+w_{00} &amp; w_{01} &amp; \cdots &amp; w_{0m} \\
+w_{10} &amp; w_{11} &amp; \cdots &amp; w_{1m} \\
+\vdots \\
+w_{n0} &amp; w_{n1} &amp; \cdots &amp; w_{nm}
 \end{bmatrix}
-$$</p>
+\begin{bmatrix}
+x_0 \\
+x_1 \\
+\vdots \\
+x_n
+\end{bmatrix} = \mathbf{w} \cdot \mathbf{x} =
+\begin{bmatrix}
+z_0 \\
+z_1 \\
+\vdots \\
+z_n
+\end{bmatrix}
+$$
+如果有 m 個 Perceptrons，n 個 feature，通常會有 m*n + n 個 weight。<br>
+最後一個 n 其值為 bias 的數量 (每個 Perceptron 皆有一個 bias)。</p>
 <h3 id="consideration">Consideration</h3>
 <p>Why can we include input data such as photos, texts, and voices in the neural network?</p>
 <p>只要能夠將圖片、聲音、文字轉成向量形式，就可以使用神經網路開始訓練。</p>
 <h2 id="activation-function">Activation Function</h2>
 <p>Step function 屬於 non-linear function，但是其 derivative 並不適合訓練。即代表回饋也會是 0。</p>
 <p>Sigmoid,Tanh,ReLU 屬於 linear function，其 derivative 適合訓練。</p>
+<h3 id="step-function">Step function</h3>
+<p>$$
+f(x) =
+\begin{cases}
+0 &amp; \text{if } x \leq 0 \\
+1 &amp; \text{if } x &gt; 0 \end{cases}
+$$</p>
+<iframe src="https://www.desmos.com/calculator/oloq76lfxc?embed" width="250" height="250" style="border: 1px solid #ccc" frameborder=0></iframe>
 <h3 id="sigmoid">Sigmoid</h3>
 <p>$$
 \begin{aligned}
@@ -444,7 +473,7 @@ $$</p>
 <iframe src="https://www.desmos.com/calculator/ufpstec3is?embed" width="250" height="250" style="border: 1px solid #ccc" frameborder=0></iframe>
 <h3 id="relu">ReLU</h3>
 <p>$$
-y=\max\left(0,x\right)
+f(x)=\max\left(0,x\right)
 $$</p>
 <iframe src="https://www.desmos.com/calculator/hy2acjl6je?embed" width="250" height="250" style="border: 1px solid #ccc" frameborder=0></iframe>
 <h2 id="softmax-fuction">Softmax Fuction</h2>
