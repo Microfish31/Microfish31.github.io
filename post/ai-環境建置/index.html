@@ -9,6 +9,9 @@
 ><head>
   <title>
     Microfish
+        |
+        [AI] - 環境建置
+      
 
     
 
@@ -81,10 +84,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
-  <link rel="canonical" href="https://microfish31.github.io/" />
+  <link rel="canonical" href="https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/" />
 
   
-  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="" />
   
   
   
@@ -110,30 +112,93 @@
 
 
   
-  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="Love travel , love writing."/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="[AI] - 環境建置"/>
+<meta name="twitter:description" content="Build AI development env for learning."/>
 
 
 
   
-  <meta property="og:title" content="" />
-<meta property="og:description" content="Love travel , love writing." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://microfish31.github.io/" /><meta property="og:site_name" content="Microfish" />
+  <meta property="og:title" content="[AI] - 環境建置" />
+<meta property="og:description" content="Build AI development env for learning." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-02-11T20:25:28+08:00" />
+<meta property="article:modified_time" content="2024-02-11T20:25:28+08:00" /><meta property="og:site_name" content="Microfish" />
 
 
 
 
+  
+  
+  
   
   <script type="application/ld+json">
     {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": "",
-      "url": "https:\/\/microfish31.github.io\/",
-      "description": "Love travel , love writing.",
-      "thumbnailUrl": "https:\/\/microfish31.github.io\/",
-      "license": ""
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "[AI] - 環境建置",
+        "headline": "[AI] - 環境建置",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eBuild AI development env for learning.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "en",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/microfish31.github.io\/post\/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightYear" : "2024",
+        "dateCreated": "2024-02-11T20:25:28.00Z",
+        "datePublished": "2024-02-11T20:25:28.00Z",
+        "dateModified": "2024-02-11T20:25:28.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Microfish",
+            "url": "https://microfish31.github.io/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/microfish31.github.io\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/microfish31.github.io\/post\/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE\/",
+        "wordCount" : "38",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "AI"
+
+    ]
     }
   </script>
 
@@ -158,9 +223,9 @@
         alt="profile picture"
       />
       
-        <h1 class="sidebar__introduction-title">
+        <div class="sidebar__introduction-title">
           <a href="/">Microfish</a>
-        </h1>
+        </div>
       
       <div class="sidebar__introduction-description">
         <p>Love travel , love writing.</p>
@@ -219,8 +284,6 @@
           <li class="nav__list-item">
             
             <a
-              
-                class="nav__link--active"
               
               href="/"
               
@@ -312,292 +375,61 @@
       animated fadeInDown
     "
   >
+    
     <div class="post__content">
+      <h1>[AI] - 環境建置</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Sun, Feb 11, 2024
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">One-minute read</span>
+          </li>
+        </ul>
+      <p>Build AI development env for learning.</p>
+<h2 id="docker-image">Docker Image</h2>
+<p><code>pytorch/pytorch:1.8.0-cuda11.1-cudnn8-devel</code></p>
+<p>From Dockerhub:
+<a href="https://hub.docker.com/r/pytorch/pytorch/tags?page=1">https://hub.docker.com/r/pytorch/pytorch/tags?page=1</a></p>
+<ul>
+<li>Run a container</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull pytorch/pytorch:1.8.0-cuda11.1-cudnn8-devel
+</span></span><span style="display:flex;"><span>docker run -n &lt;your_container_name&gt; --gpus --ipc<span style="color:#f92672">=</span>host all pytorch/pytorch:1.8.0-cuda11.1-cudnn8-devel
+</span></span></code></pre></div><ul>
+<li>Install vim in container</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker exec -it &lt;your_container_name&gt;
+</span></span><span style="display:flex;"><span>apt-get update
+</span></span><span style="display:flex;"><span>apt-get vim
+</span></span></code></pre></div></div>
+    <div class="post__footer">
+      
+
+      
+        <span><a class="tag" href="/tags/ai/">AI</a></span>
+
+
       
     </div>
 
-    
-  </div>
+    <div id="comment">
+          <h2>comments</h2>
+          <div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
 
-  
-
-  
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/">[AI] - 環境建置</a></h3>
-        
-          <p>Build AI development env for learning.</p>
-        
         </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sun, Feb 11, 2024
-            
-
-          </span
-        >
-        
-
-        
-          <span><a class="tag" href="/tags/ai/">AI</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/post/ai-%E6%A8%A1%E5%9E%8B%E5%AD%B8%E7%BF%92/">[AI] - 模型學習</a></h3>
-        
-          <p>Elaborating on Model Learning.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Fri, Feb 9, 2024
-            
-
-          </span
-        >
-        
-
-        
-          <span><a class="tag" href="/tags/ai/">AI</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/post/ai-%E6%A8%A1%E5%9E%8B/">[AI] - 模型</a></h3>
-        
-          <p>Let&rsquo;s talk about AI model.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Wed, Feb 7, 2024
-            
-
-          </span
-        >
-        
-
-        
-          <span><a class="tag" href="/tags/ai/">AI</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/post/ai-%E5%88%9D%E6%8E%A2/">[AI] - 初探</a></h3>
-        
-          <p>An Introduction to AI.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Wed, Feb 7, 2024
-            
-
-          </span
-        >
-        
-
-        
-          <span><a class="tag" href="/tags/ai/">AI</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/post/2023%E4%BA%AC%E9%98%AA%E8%A1%8C-day1/">[2023京阪行] - DAY1</a></h3>
-        
-          <p>Travel itinerary ~</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sun, Feb 4, 2024
-            
-
-          </span
-        >
-        
-
-        
-          <span><a class="tag" href="/tags/trip/">trip</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/post/2023%E4%BA%AC%E9%98%AA%E8%A1%8C-%E5%BF%83%E5%BE%97/">[2023京阪行] - 心得</a></h3>
-        
-          <p>Recording the bits and pieces of the journey.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sun, Feb 4, 2024
-            
-
-          </span
-        >
-        
-
-        
-          <span><a class="tag" href="/tags/trip/">trip</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/post/2023%E4%BA%AC%E9%98%AA%E8%A1%8C-%E5%AF%A6%E9%9A%9B%E8%8A%B1%E8%B2%BB/">[2023京阪行] - 實際花費</a></h3>
-        
-          <p>The actual expenses during the journey.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sun, Feb 4, 2024
-            
-
-          </span
-        >
-        
-
-        
-          <span><a class="tag" href="/tags/trip/">trip</a></span>
-
-
-        
-      </div>
-    </div>
-  
-    <div
-      class="post 
-        animated fadeInDown
-      "
-    >
-      
-      <div class="post__content">
-        <h3><a href="/post/2023%E4%BA%AC%E9%98%AA%E8%A1%8C-%E8%A6%8F%E5%8A%83/">[2023京阪行] - 規劃</a></h3>
-        
-          <p>A good journey begins with planning.</p>
-        
-        </div>
-
-      
-      <div class="post__footer">
-        <em class="fas fa-calendar-day"></em>
-        <span class="post__footer-date"
-          >
-            
-              Sun, Feb 4, 2024
-            
-
-          </span
-        >
-        
-
-        
-          <span><a class="tag" href="/tags/trip/">trip</a></span>
-
-
-        
-      </div>
-    </div>
-  
-  <div class="pagination">
-    
-
   </div>
 
       </main>
