@@ -192,7 +192,7 @@
 
     ,
         "url" : "https:\/\/microfish31.github.io\/post\/ai-%E6%A8%A1%E5%9E%8B%E5%AD%B8%E7%BF%92\/",
-        "wordCount" : "350",
+        "wordCount" : "416",
         "genre" : [ ],
         "keywords" : [ 
       
@@ -397,6 +397,15 @@
           </li>
         </ul>
       <p>Elaborating on Model Learning.</p>
+<blockquote>
+<p>本篇文章將介紹 &hellip;.</p>
+<ol>
+<li>Input 與 Weight 如何在 Perceptron 計算</li>
+<li>Activation Function</li>
+<li>Loss Function</li>
+<li>如何透過 Loss 修正學習</li>
+</ol>
+</blockquote>
 <h2 id="perceptron">Perceptron</h2>
 <h3 id="one-perceptron">One Perceptron</h3>
 <p>針對一個 Perceptron 依照權重提取 feature 的分數
@@ -513,7 +522,32 @@ $$
 MAE = \tfrac{1}{n} \sum _{i=1}^n \left|(\mathbf{x_i} -  \mathbf{\hat{x}}) \right|
 $$
 <photo></p>
-<p>Cross-Entropy Loss:</p></div>
+<p>Cross-Entropy Loss:<br>
+此為分類問題常用之 Loss 函數。</p>
+<h3 id="選用">選用</h3>
+<p>如果需要更加關注預測誤差的整體分佈情況，或者希望更加準確地評估模型的性能，則可以選擇 MSE。<br>
+如果數據集中存在異常值，並且不希望這些異常值對評估結果產生較大影響，則可以選擇 MAE。</p>
+<p>MSE 對於大誤差更加敏感，因為它將每個預測誤差平方後求平均。代表 RMSE 也會對大誤差更加關注。<br>
+MAE 對異常值的 Robustness 較好，因為它計算的是預測誤差的絕對值的平均值。<br>
+RMSE 結合 MSE 和 MAE 的優點，同時也考慮量級的影響。這在實際應用中可成為較全面的指標，尤其是在需要綜合考慮模型預測準確度以及對異常值的敏感性。</p>
+<h3 id="專有名詞">專有名詞</h3>
+<p>loss/residual/error</p>
+<ul>
+<li>Loss</li>
+<li>Residual</li>
+<li>Error</li>
+</ul>
+<h2 id="gradient-descent">Gradient Descent</h2>
+<h2 id="learning-rate">Learning Rate</h2>
+<p>Learning Rate 的大小會影響到學習速度，調整適當可以避免錯過最低 loss 值。
+但也不能調整過低導致學習緩慢。</p>
+<h2 id="basic-know-how">Basic Know How</h2>
+<ol>
+<li>Partial Derivative</li>
+<li>Vector, Matrix Calculating</li>
+<li>Chart (desmos)</li>
+<li>Formula writing by Katex</li>
+</ol></div>
     <div class="post__footer">
       
 
