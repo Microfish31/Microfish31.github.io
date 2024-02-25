@@ -7,7 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>2024-{{ YEAR }}</copyright>
-    <lastBuildDate>Mon, 19 Feb 2024 23:28:48 +0800</lastBuildDate><atom:link href="https://microfish31.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Feb 2024 14:53:44 +0800</lastBuildDate><atom:link href="https://microfish31.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Medical] - 醫療與法律</title>
+      <link>https://microfish31.github.io/post/medical-%E9%86%AB%E7%99%82%E8%88%87%E6%B3%95%E5%BE%8B/</link>
+      <pubDate>Sun, 25 Feb 2024 14:53:44 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/medical-%E9%86%AB%E7%99%82%E8%88%87%E6%B3%95%E5%BE%8B/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>[Parallel Computing] - Concept</title>
+      <link>https://microfish31.github.io/post/parallel-computing-concept/</link>
+      <pubDate>Thu, 22 Feb 2024 00:31:56 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/parallel-computing-concept/</guid>
+      
+        <description></description>
+      
+    </item>
+    
     <item>
       <title>[Investment] - 美元基礎</title>
       <link>https://microfish31.github.io/post/investment-%E7%BE%8E%E5%85%83%E5%9F%BA%E7%A4%8E/</link>
