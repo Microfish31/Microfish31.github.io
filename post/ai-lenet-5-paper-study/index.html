@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <title>
+    Microfish
+        |
+        [AI] Lenet-5 - Paper Study
+      
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.123.7"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Microfish" />
+  <meta
+    name="description"
+    content="Love travel , love writing."
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.26d8396ded3f4aa47cc8d77a9fcb09fee1d20d223c6b3f074a21c7e217bc8c6d.css"
+      integrity="sha256-Jtg5be0/SqR8yNd6n8sJ/uHSDSI8az8HSiHH4he8jG0="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css"
+    integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css"
+    integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css"
+    integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://microfish31.github.io/post/ai-lenet-5-paper-study/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="[AI] Lenet-5 - Paper Study"/>
+<meta name="twitter:description" content="Study for paper &ldquo;Gradient Based Learning Applied to Document Recognition&rdquo;."/>
+
+
+
+  
+  <meta property="og:title" content="[AI] Lenet-5 - Paper Study" />
+<meta property="og:description" content="Study for paper &ldquo;Gradient Based Learning Applied to Document Recognition&rdquo;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://microfish31.github.io/post/ai-lenet-5-paper-study/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-03-10T13:54:14+08:00" />
+<meta property="article:modified_time" content="2024-03-10T13:54:14+08:00" /><meta property="og:site_name" content="Microfish" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "[AI] Lenet-5 - Paper Study",
+        "headline": "[AI] Lenet-5 - Paper Study",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eStudy for paper \u0026ldquo;Gradient Based Learning Applied to Document Recognition\u0026rdquo;.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "en",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/microfish31.github.io\/post\/ai-lenet-5-paper-study\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightYear" : "2024",
+        "dateCreated": "2024-03-10T13:54:14.00Z",
+        "datePublished": "2024-03-10T13:54:14.00Z",
+        "dateModified": "2024-03-10T13:54:14.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Microfish",
+            "url": "https://microfish31.github.io/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/microfish31.github.io\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/microfish31.github.io\/post\/ai-lenet-5-paper-study\/",
+        "wordCount" : "746",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "AI"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://avatars.githubusercontent.com/u/75024370?v=4"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Microfish</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Love travel , love writing.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >Portfolio</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/contact/"
+              
+              title=""
+              >Contact</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>[AI] Lenet-5 - Paper Study</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Sun, Mar 10, 2024
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">4-minute read</span>
+          </li>
+        </ul>
+      <p>Study for paper &ldquo;Gradient Based Learning Applied to Document Recognition&rdquo;.</p>
+<h2 id="paper-source">Paper Source</h2>
+<p>Title: Gradient Based Learning Applied to Document Recognition<br>
+Authors: Y. Lecun; L. Bottou; Y. Bengio; P. Haffner</p>
+<h2 id="summary">Summary:</h2>
+<p>LeNet-5 is a convolutional neural network (CNN) architecture designed for handwritten digit recognition, proposed by Yann LeCun et al. in 1998. It consists of seven layers, including two convolutional layers followed by subsampling layers and three fully connected layers.</p>
+<h2 id="background">Background:</h2>
+<p>LeNet-5 was developed to address the problem of recognizing handwritten digits in the context of the MNIST dataset, which contains images of handwritten digits ranging from 0 to 9.</p>
+<h2 id="solving-the-main-problem">Solving the main problem:</h2>
+<p>LeNet-5 tackles the main problem of handwritten digit recognition by utilizing convolutional layers to extract features from the input images and subsampling layers to reduce dimensionality while preserving important features. This hierarchical approach enables the network to learn hierarchical representations of the input data, leading to accurate digit classification.</p>
+<h2 id="key-skill">Key skill:</h2>
+<p>A key skill employed by LeNet-5 is convolutional operation, which involves applying filters to the input image to extract features such as edges, corners, and textures. Additionally, LeNet-5 utilizes techniques like subsampling to downsample feature maps, reducing computational complexity while retaining important features.</p>
+<h2 id="result--contribution">Result &amp; Contribution:</h2>
+<p>LeNet-5 achieved state-of-the-art performance on the MNIST dataset at the time of its introduction, demonstrating the effectiveness of CNNs for image recognition tasks. Its contribution lies in establishing the foundational principles of convolutional neural networks and paving the way for advancements in computer vision and deep learning research.</p>
+<h2 id="hands-on-pytorch">Hands-On (pytorch)</h2>
+<h3 id="env">Env</h3>
+<p>Env: Pytorch (docker images pytorch/pytorch:2.1.1-cuda12.1-cudnn8-devel)<br>
+Tools: tersorboard</p>
+<ul>
+<li>Container
+Base for image  <code>yang_pytorch_env:20240307</code>
+<ul>
+<li>pytorch/pytorch:2.1.1-cuda12.1-cudnn8-devel</li>
+<li>Vim</li>
+<li>OpenSSH Server</li>
+</ul>
+<pre tabindex="0"><code># Dockerfile
+FROM yang_pytorch_env:20240307
+
+EXPOSE 8080 22
+
+RUN sed -i &#39;s/#PermitRootLogin prohibit-password/PermitRootLogin yes/&#39; /etc/ssh/sshd_config
+
+CMD [&#34;/usr/sbin/sshd&#34;, &#34;-D&#34;]
+</code></pre></li>
+<li>Run Code
+<pre tabindex="0"><code>python3 lenet5.py
+</code></pre></li>
+<li>Tensorboard
+<pre tabindex="0"><code>tensorboard --logdir=runs --port 8080 --bind_all --reload_interval 1.0 --reload_multifile True
+</code></pre></li>
+</ul>
+<h3 id="model">Model</h3>
+<pre tabindex="0"><code># lenet5.py
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torchvision import datasets, transforms
+from torch.utils.tensorboard import SummaryWriter  # Import SummaryWriter for TensorBoard integration
+
+# Define the LeNet-5 model
+class LeNet5(nn.Module):
+    def __init__(self):
+        super(LeNet5, self).__init__()
+        # Layer C1: Convolutional layer
+        self.c1 = nn.Conv2d(in_channels=1, out_channels=6, kernel_size=5, padding=2)
+        # Layer S2: Sub-sampling layer (Max-Pooling)
+        # use sigmoid
+        self.s2 = nn.MaxPool2d(kernel_size=2, stride=2)
+        # Layer C3: Convolutional layer
+        self.c3 = nn.Conv2d(in_channels=6, out_channels=16, kernel_size=5)
+        # Layer S4: Sub-sampling layer (Max-Pooling)
+        self.s4 = nn.MaxPool2d(kernel_size=2, stride=2)
+        # Layer C5: Fully connected layer
+        self.c5 = nn.Linear(16 * 5 * 5, 400) 
+        # Layer F6: Fully connected layer
+        self.f6 = nn.Linear(400, 120)
+        # Output layer
+        self.output = nn.Linear(120, 10)
+
+    def forward(self, x):
+        # C1 layer
+        x = self.c1(x)
+        x = nn.functional.relu(x)
+        # S2 layer
+        x = self.s2(x)
+        # C3 layer
+        x = self.c3(x)
+        x = nn.functional.relu(x)
+        # S4 layer
+        x = self.s4(x)
+        #Flatten the output for fully connected layers
+        x = x.view(-1, 16 * 5 * 5)
+        #C5 layer
+        x = self.c5(x)
+        x = nn.functional.relu(x)
+        #F6 layer
+        x = self.f6(x)
+        x = nn.functional.relu(x)
+        #Output layer
+        x = self.output(x)
+        return x
+
+
+# Load the dataset
+# Image preprocessing
+transform = transforms.Compose([
+    transforms.ToTensor(),  # Convert PIL image to PyTorch tensor
+    transforms.Normalize((0.5,), (0.5,))  # Scale pixel values from [0, 1] to [-1, 1]
+])
+train_dataset = datasets.MNIST(root=&#34;./data&#34;, train=True, transform=transform, download=True)
+# shuffle = true means randon orders to enhance the generalization
+# batch_size Refers to the number of data samples processed by the model at one time during each training session.
+train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle=True)
+
+# Define the model, loss function, and optimizer
+model = LeNet5()
+criterion = nn.CrossEntropyLoss()
+# lr: leaning rate
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+
+# Create a SummaryWriter
+writer = SummaryWriter()
+
+# Train the model
+epochs = 10
+for epoch in range(epochs):
+    running_loss = 0.0
+    correct_predictions = 0
+    total_samples = 0
+    for batch_index, (inputs, labels) in enumerate(train_loader):
+        #print(&#34;Input shape:&#34;, inputs.shape)  # Expected: (batch_size, 1, 28, 28)
+        #print(&#34;Input value range:&#34;, inputs.min().item(), &#34;-&#34;, inputs.max().item())  # Expected: [-1, 1]
+        optimizer.zero_grad()
+        outputs = model(inputs)
+        loss = criterion(outputs, labels)
+        loss.backward()
+        optimizer.step()
+        running_loss += loss.item()
+
+        # Calculate accuracy
+        _, predicted = torch.max(outputs, 1)
+        correct_predictions += (predicted == labels).sum().item()
+        total_samples += labels.size(0)
+
+        if (batch_index+1) % 100 == 0:  # Print loss every 100 batches
+           print(&#39;[Epoch %d, Batch %d] Loss: %.3f&#39; % (epoch + 1, batch_index + 1, running_loss / 100))
+           writer.add_scalar(&#39;training_loss&#39;, running_loss / 100, epoch * len(train_loader) + batch_index)  # Write loss to TensorBoard
+           running_loss = 0.0
+
+    # Calculate accuracy at the end of each epoch
+    accuracy = correct_predictions / total_samples
+    print(&#39;Epoch %d Accuracy: %.2f%%&#39; % (epoch + 1, 100 * accuracy))
+    writer.add_scalar(&#39;accuracy&#39;, accuracy, epoch)  # Write accuracy to TensorBoard
+
+print(&#39;Finished Training&#39;)
+
+# Close the SummaryWriter after training
+writer.close()
+</code></pre></div>
+    <div class="post__footer">
+      
+
+      
+        <span><a class="tag" href="/tags/ai/">AI</a></span>
+
+
+      
+    </div>
+
+    <div id="comment">
+          <h2>comments</h2>
+          <div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+        </div>
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>
