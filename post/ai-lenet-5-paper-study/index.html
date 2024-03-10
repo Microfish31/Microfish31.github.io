@@ -192,7 +192,7 @@
 
     ,
         "url" : "https:\/\/microfish31.github.io\/post\/ai-lenet-5-paper-study\/",
-        "wordCount" : "746",
+        "wordCount" : "1186",
         "genre" : [ ],
         "keywords" : [ 
       
@@ -393,23 +393,61 @@
           </li>
           <li class="post__meta-item">
             <em class="fas fa-stopwatch post__meta-icon"></em>
-            <span class="post__meta-text">4-minute read</span>
+            <span class="post__meta-text">6-minute read</span>
           </li>
         </ul>
       <p>Study for paper &ldquo;Gradient Based Learning Applied to Document Recognition&rdquo;.</p>
-<h2 id="paper-source">Paper Source</h2>
-<p>Title: Gradient Based Learning Applied to Document Recognition<br>
-Authors: Y. Lecun; L. Bottou; Y. Bengio; P. Haffner</p>
-<h2 id="summary">Summary:</h2>
+<h2 id="paper">Paper</h2>
+<p><strong>Title:</strong> Gradient Based Learning Applied to Document Recognition<br>
+<strong>Authors:</strong> Y. Lecun; L. Bottou; Y. Bengio; P. Haffner<br>
+<strong>Publisher:</strong> IEEE<br>
+<strong>Published in:</strong> Proceedings of the IEEE<br>
+<strong>Date of Publication:</strong> November 1998<br>
+<strong>IEEE Keywords:</strong><br>
+Neural networks, Pattern recognition, Machine learning, Optical character recognition software, Character recognition, Feature extraction, Multi-layer neural network, Optical computing, Hidden Markov models, Principal component analysis<br>
+<strong>Source Literature:</strong> <a href="https://ieeexplore.ieee.org/document/726791">https://ieeexplore.ieee.org/document/726791</a></p>
+<h2 id="summary">Summary</h2>
 <p>LeNet-5 is a convolutional neural network (CNN) architecture designed for handwritten digit recognition, proposed by Yann LeCun et al. in 1998. It consists of seven layers, including two convolutional layers followed by subsampling layers and three fully connected layers.</p>
-<h2 id="background">Background:</h2>
+<p>LeNet-5, the name is derived from the author LeCun, with &lsquo;5&rsquo; being the code for his research accomplishments.</p>
+<h2 id="background">Background</h2>
 <p>LeNet-5 was developed to address the problem of recognizing handwritten digits in the context of the MNIST dataset, which contains images of handwritten digits ranging from 0 to 9.</p>
-<h2 id="solving-the-main-problem">Solving the main problem:</h2>
+<h2 id="solving-the-main-problem">Solving the main problem</h2>
 <p>LeNet-5 tackles the main problem of handwritten digit recognition by utilizing convolutional layers to extract features from the input images and subsampling layers to reduce dimensionality while preserving important features. This hierarchical approach enables the network to learn hierarchical representations of the input data, leading to accurate digit classification.</p>
-<h2 id="key-skill">Key skill:</h2>
+<h2 id="key-skill">Key skill</h2>
 <p>A key skill employed by LeNet-5 is convolutional operation, which involves applying filters to the input image to extract features such as edges, corners, and textures. Additionally, LeNet-5 utilizes techniques like subsampling to downsample feature maps, reducing computational complexity while retaining important features.</p>
-<h2 id="result--contribution">Result &amp; Contribution:</h2>
-<p>LeNet-5 achieved state-of-the-art performance on the MNIST dataset at the time of its introduction, demonstrating the effectiveness of CNNs for image recognition tasks. Its contribution lies in establishing the foundational principles of convolutional neural networks and paving the way for advancements in computer vision and deep learning research.</p>
+<h2 id="result--contribution">Result &amp; Contribution</h2>
+<ul>
+<li><strong>Pioneering CNN Application</strong><br>
+LeNet-5 introduced Convolutional Neural Networks (CNNs) to handwritten digit recognition, marking the first successful application of CNNs in this field.</li>
+<li><strong>Hierarchical Structure Design and Parameter Sharing</strong><br>
+LeNet-5 proposed a hierarchical structure with convolutional and pooling layers, along with a parameter sharing mechanism, effectively reducing model parameters and enhancing generalization capability.</li>
+<li><strong>Reduced Preprocessing Need</strong> <br>
+LeNet-5 minimized preprocessing requirements by directly learning features from raw data, simplifying the recognition process for handwritten character recognition.</li>
+<li><strong>Introduction of Gradient-Based Learning</strong> <br>
+LeNet-5 introduced a gradient-based learning neural network structure, enabling automatic feature and pattern learning from data, leading to superior results compared to alternative methods in handwritten character recognition.</li>
+<li><strong>Impact on Deep Learning Development</strong><br>
+LeNet-5&rsquo;s successful application significantly influenced the advancement of deep learning, particularly in image recognition, laying the groundwork for subsequent research and applications in the field.</li>
+</ul>
+<h2 id="layers">Layers</h2>
+<p>LeNet-5 consists of a total of 7 layers.</p>
+<figure class="small"><img src="/images/ai/lenet-5.png"
+         alt="image"/><figcaption>
+            <p>Architecture of LeNet-5</p>
+        </figcaption>
+</figure>
+
+<p>Key features</p>
+<ul>
+<li><strong>Local Perception</strong><br>
+LeNet-5 employs convolutional layers and pooling layers to achieve local perception. By sliding convolutional kernels over the input image, it captures local features, aiding in extracting spatial information from the image.</li>
+<li><strong>Weight Sharing</strong><br>
+LeNet-5 utilizes weight sharing, where the same convolutional kernel is applied across the entire image. This technique reduces the number of parameters in the network, mitigates overfitting risks, and enhances the model&rsquo;s generalization ability.</li>
+<li><strong>Multiple Convolutional Kernels</strong><br>
+Each convolutional layer in LeNet-5 typically consists of multiple convolutional kernels. These kernels learn different features, thereby increasing the network&rsquo;s ability to represent various aspects of the input image.</li>
+</ul>
+<h2 id="gradian-descend">Gradian Descend</h2>
+<p>The commonly used loss function in LeNet-5 is the Cross Entropy Loss.<br>
+Cross Entropy Loss is a popular loss function used for classification tasks, widely applied in neural networks.</p>
 <h2 id="hands-on-pytorch">Hands-On (pytorch)</h2>
 <h3 id="env">Env</h3>
 <p>Env: Pytorch (docker images pytorch/pytorch:2.1.1-cuda12.1-cudnn8-devel)<br>
@@ -439,6 +477,13 @@ CMD [&#34;/usr/sbin/sshd&#34;, &#34;-D&#34;]
 </code></pre></li>
 </ul>
 <h3 id="model">Model</h3>
+<p>Over time and with the advancement of research, various improvements and optimizations have been proposed, primarily focusing on the handling of activation functions and layers in neural networks.</p>
+<ul>
+<li>Activation Functions:<br>
+LeNet-5 utilizes Sigmoid and Tanh functions to introduce nonlinearity, whereas modern neural networks more commonly employ ReLU (Rectified Linear Unit) as the activation function. The advantage of ReLU lies in its fast computation speed and avoidance of gradient vanishing issues during backpropagation.</li>
+<li>Nonlinearity Placement:<br>
+In LeNet-5, nonlinear activation is typically introduced after pooling layers. However, in modern neural networks, activation functions are usually applied immediately after convolutional layers, rather than introducing nonlinearity after pooling layers. This approach is more common as it aligns better with the design principles of neural networks and is easier to train.</li>
+</ul>
 <pre tabindex="0"><code># lenet5.py
 import torch
 import torch.nn as nn
@@ -545,7 +590,14 @@ print(&#39;Finished Training&#39;)
 
 # Close the SummaryWriter after training
 writer.close()
-</code></pre></div>
+</code></pre><h3 id="check-gpu-support">Check gpu support</h3>
+<pre tabindex="0"><code>torch.cuda.is_available()
+device = torch.device(&#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;)
+</code></pre><h3 id="check-container-memory">Check container memory</h3>
+<pre tabindex="0"><code>docker stats
+</code></pre><h2 id="references">References</h2>
+<p><a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html</a><br>
+<a href="https://pytorch.org/docs/stable/tensorboard.html">https://pytorch.org/docs/stable/tensorboard.html</a></p></div>
     <div class="post__footer">
       
 
