@@ -192,7 +192,7 @@
 
     ,
         "url" : "https:\/\/microfish31.github.io\/post\/ai-lenet-5-paper-study\/",
-        "wordCount" : "1186",
+        "wordCount" : "1310",
         "genre" : [ ],
         "keywords" : [ 
       
@@ -393,7 +393,7 @@
           </li>
           <li class="post__meta-item">
             <em class="fas fa-stopwatch post__meta-icon"></em>
-            <span class="post__meta-text">6-minute read</span>
+            <span class="post__meta-text">7-minute read</span>
           </li>
         </ul>
       <p>Study for paper &ldquo;Gradient Based Learning Applied to Document Recognition&rdquo;.</p>
@@ -469,11 +469,15 @@ RUN sed -i &#39;s/#PermitRootLogin prohibit-password/PermitRootLogin yes/&#39; /
 
 CMD [&#34;/usr/sbin/sshd&#34;, &#34;-D&#34;]
 </code></pre></li>
+<li>Run Container
+<pre tabindex="0"><code>docker run -itd --name yang_pytorch_env2 -v /home/ubuntu/yang_pytorch:/workspace -p 0.0.0.0:8080:8080 -p 0.0.0.0:8081:22 --gpus all --ipc=host yang_pytorch_env:20240307_2 /bin/sh -c &#34;while true; do echo hello world; sleep 1; done&#34;
+</code></pre></li>
 <li>Run Code
 <pre tabindex="0"><code>python3 lenet5.py
 </code></pre></li>
 <li>Tensorboard
-<pre tabindex="0"><code>tensorboard --logdir=runs --port 8080 --bind_all --reload_interval 1.0 --reload_multifile True
+<pre tabindex="0"><code>pip install tensorboard
+tensorboard --logdir=runs --port 8080 --bind_all --reload_interval 1.0 --reload_multifile True
 </code></pre></li>
 </ul>
 <h3 id="model">Model</h3>
@@ -483,6 +487,9 @@ CMD [&#34;/usr/sbin/sshd&#34;, &#34;-D&#34;]
 LeNet-5 utilizes Sigmoid and Tanh functions to introduce nonlinearity, whereas modern neural networks more commonly employ ReLU (Rectified Linear Unit) as the activation function. The advantage of ReLU lies in its fast computation speed and avoidance of gradient vanishing issues during backpropagation.</li>
 <li>Nonlinearity Placement:<br>
 In LeNet-5, nonlinear activation is typically introduced after pooling layers. However, in modern neural networks, activation functions are usually applied immediately after convolutional layers, rather than introducing nonlinearity after pooling layers. This approach is more common as it aligns better with the design principles of neural networks and is easier to train.</li>
+<li>Subsampling Strategies in LeNet-5 and CNNs:
+Average Pooling vs. Max Pooling
+LeNet-5 and typical CNNs both utilize some form of subsampling layer to reduce the size of feature maps. However, LeNet-5 employs average pooling layers for subsampling, whereas typical CNNs commonly use max pooling layers.</li>
 </ul>
 <pre tabindex="0"><code># lenet5.py
 import torch
@@ -497,43 +504,44 @@ class LeNet5(nn.Module):
         super(LeNet5, self).__init__()
         # Layer C1: Convolutional layer
         self.c1 = nn.Conv2d(in_channels=1, out_channels=6, kernel_size=5, padding=2)
-        # Layer S2: Sub-sampling layer (Max-Pooling)
-        # use sigmoid
+        # Layer S2: Sub-sampling layer -&gt; (Max-Pooling)
         self.s2 = nn.MaxPool2d(kernel_size=2, stride=2)
         # Layer C3: Convolutional layer
         self.c3 = nn.Conv2d(in_channels=6, out_channels=16, kernel_size=5)
-        # Layer S4: Sub-sampling layer (Max-Pooling)
+        # Layer S4: Sub-sampling layer -&gt; (Max-Pooling)
         self.s4 = nn.MaxPool2d(kernel_size=2, stride=2)
         # Layer C5: Fully connected layer
-        self.c5 = nn.Linear(16 * 5 * 5, 400) 
+        self.c5 = nn.Linear(16 * 5 * 5, 120) 
         # Layer F6: Fully connected layer
-        self.f6 = nn.Linear(400, 120)
+        self.f6 = nn.Linear(120, 84)
         # Output layer
-        self.output = nn.Linear(120, 10)
+        self.output = nn.Linear(84, 10)
 
     def forward(self, x):
         # C1 layer
         x = self.c1(x)
+        # Sigmoid -&gt; ReLu (After convolution layer)
         x = nn.functional.relu(x)
         # S2 layer
         x = self.s2(x)
         # C3 layer
         x = self.c3(x)
+        # Sigmoid -&gt; ReLu (After convolution layer)
         x = nn.functional.relu(x)
         # S4 layer
         x = self.s4(x)
-        #Flatten the output for fully connected layers
+        # Flatten the output for fully connected layers
         x = x.view(-1, 16 * 5 * 5)
-        #C5 layer
+        # C5 layer
         x = self.c5(x)
+        # Sigmoid -&gt; ReLu
         x = nn.functional.relu(x)
-        #F6 layer
+        # F6 layer
         x = self.f6(x)
         x = nn.functional.relu(x)
-        #Output layer
+        # Output layer
         x = self.output(x)
         return x
-
 
 # Load the dataset
 # Image preprocessing
@@ -542,9 +550,12 @@ transform = transforms.Compose([
     transforms.Normalize((0.5,), (0.5,))  # Scale pixel values from [0, 1] to [-1, 1]
 ])
 train_dataset = datasets.MNIST(root=&#34;./data&#34;, train=True, transform=transform, download=True)
+
+batch_size = 64
+
 # shuffle = true means randon orders to enhance the generalization
 # batch_size Refers to the number of data samples processed by the model at one time during each training session.
-train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle=True)
+train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 
 # Define the model, loss function, and optimizer
 model = LeNet5()
@@ -591,12 +602,16 @@ print(&#39;Finished Training&#39;)
 # Close the SummaryWriter after training
 writer.close()
 </code></pre><h3 id="check-gpu-support">Check gpu support</h3>
-<pre tabindex="0"><code>torch.cuda.is_available()
-device = torch.device(&#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;)
+<pre tabindex="0"><code>device = torch.device(&#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;)
+# Define the model, loss function, and optimizer (gpu)
+model = LeNet5().to(device)
+# Move inputs and labels to GPU
+inputs, labels = inputs.to(device), labels.to(device)  
 </code></pre><h3 id="check-container-memory">Check container memory</h3>
 <pre tabindex="0"><code>docker stats
 </code></pre><h2 id="references">References</h2>
 <p><a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html</a><br>
+<a href="https://pytorch.org/docs/stable/generated/torch.Tensor.view.html">https://pytorch.org/docs/stable/generated/torch.Tensor.view.html</a>
 <a href="https://pytorch.org/docs/stable/tensorboard.html">https://pytorch.org/docs/stable/tensorboard.html</a></p></div>
     <div class="post__footer">
       
