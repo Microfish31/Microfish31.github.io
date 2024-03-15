@@ -192,7 +192,7 @@
 
     ,
         "url" : "https:\/\/microfish31.github.io\/post\/ai-lenet-5-paper-study\/",
-        "wordCount" : "1310",
+        "wordCount" : "1314",
         "genre" : [ ],
         "keywords" : [ 
       
@@ -448,6 +448,8 @@ Each convolutional layer in LeNet-5 typically consists of multiple convolutional
 <h2 id="gradian-descend">Gradian Descend</h2>
 <p>The commonly used loss function in LeNet-5 is the Cross Entropy Loss.<br>
 Cross Entropy Loss is a popular loss function used for classification tasks, widely applied in neural networks.</p>
+<p>SGD
+Adam</p>
 <h2 id="hands-on-pytorch">Hands-On (pytorch)</h2>
 <h3 id="env">Env</h3>
 <p>Env: Pytorch (docker images pytorch/pytorch:2.1.1-cuda12.1-cudnn8-devel)<br>
@@ -610,7 +612,9 @@ inputs, labels = inputs.to(device), labels.to(device)
 </code></pre><h3 id="check-container-memory">Check container memory</h3>
 <pre tabindex="0"><code>docker stats
 </code></pre><h2 id="references">References</h2>
-<p><a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html</a><br>
+<p><a href="https://pytorch.org/vision/main/generated/torchvision.datasets.MNIST.html">https://pytorch.org/vision/main/generated/torchvision.datasets.MNIST.html</a>
+<a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html</a><br>
+<a href="https://pytorch.org/docs/stable/generated/torch.optim.SGD.html">https://pytorch.org/docs/stable/generated/torch.optim.SGD.html</a>
 <a href="https://pytorch.org/docs/stable/generated/torch.Tensor.view.html">https://pytorch.org/docs/stable/generated/torch.Tensor.view.html</a>
 <a href="https://pytorch.org/docs/stable/tensorboard.html">https://pytorch.org/docs/stable/tensorboard.html</a></p></div>
     <div class="post__footer">
