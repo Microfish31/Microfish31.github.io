@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <title>
+    Microfish
+        |
+        [AI] - Paper Study (Lenet-5)
+      
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.123.7"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Microfish" />
+  <meta
+    name="description"
+    content="Love travel , love writing."
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.26d8396ded3f4aa47cc8d77a9fcb09fee1d20d223c6b3f074a21c7e217bc8c6d.css"
+      integrity="sha256-Jtg5be0/SqR8yNd6n8sJ/uHSDSI8az8HSiHH4he8jG0="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css"
+    integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css"
+    integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css"
+    integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://microfish31.github.io/post/ai-lenet-5-paper-study/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="[AI] - Paper Study (Lenet-5)"/>
+<meta name="twitter:description" content="Study for paper &ldquo;Gradient Based Learning Applied to Document Recognition&rdquo;."/>
+
+
+
+  
+  <meta property="og:title" content="[AI] - Paper Study (Lenet-5)" />
+<meta property="og:description" content="Study for paper &ldquo;Gradient Based Learning Applied to Document Recognition&rdquo;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://microfish31.github.io/post/ai-lenet-5-paper-study/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-03-10T13:54:14+08:00" />
+<meta property="article:modified_time" content="2024-03-10T13:54:14+08:00" /><meta property="og:site_name" content="Microfish" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "[AI] - Paper Study (Lenet-5)",
+        "headline": "[AI] - Paper Study (Lenet-5)",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eStudy for paper \u0026ldquo;Gradient Based Learning Applied to Document Recognition\u0026rdquo;.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "en",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/microfish31.github.io\/post\/ai-lenet-5-paper-study\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightYear" : "2024",
+        "dateCreated": "2024-03-10T13:54:14.00Z",
+        "datePublished": "2024-03-10T13:54:14.00Z",
+        "dateModified": "2024-03-10T13:54:14.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Microfish",
+            "url": "https://microfish31.github.io/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/microfish31.github.io\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/microfish31.github.io\/post\/ai-lenet-5-paper-study\/",
+        "wordCount" : "2337",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "AI"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://avatars.githubusercontent.com/u/75024370?v=4"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Microfish</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Love travel , love writing.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >Portfolio</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/contact/"
+              
+              title=""
+              >Contact</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>[AI] - Paper Study (Lenet-5)</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Sun, Mar 10, 2024
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">11-minute read</span>
+          </li>
+        </ul>
+      <p>Study for paper &ldquo;Gradient Based Learning Applied to Document Recognition&rdquo;.</p>
+<h2 id="paper">Paper</h2>
+<p><strong>Title:</strong> Gradient Based Learning Applied to Document Recognition<br>
+<strong>Authors:</strong> Y. Lecun; L. Bottou; Y. Bengio; P. Haffner<br>
+<strong>Publisher:</strong> IEEE<br>
+<strong>Published in:</strong> Proceedings of the IEEE<br>
+<strong>Date of Publication:</strong> November 1998<br>
+<strong>IEEE Keywords:</strong><br>
+Neural networks, Pattern recognition, Machine learning, Optical character recognition software, Character recognition, Feature extraction, Multi-layer neural network, Optical computing, Hidden Markov models, Principal component analysis<br>
+<strong>Source Literature:</strong> <a href="https://ieeexplore.ieee.org/document/726791">https://ieeexplore.ieee.org/document/726791</a></p>
+<h2 id="summary">Summary</h2>
+<p>LeNet-5 is a convolutional neural network (CNN) architecture designed for handwritten digit recognition, proposed by Yann LeCun et al. in 1998. It consists of seven layers, including two convolutional layers followed by subsampling layers and three fully connected layers.</p>
+<p>LeNet-5, the name is derived from the author LeCun, with &lsquo;5&rsquo; being the code for his research accomplishments.</p>
+<h2 id="background">Background</h2>
+<p>LeNet-5 was developed to address the problem of recognizing handwritten digits in the context of the MNIST dataset, which contains images of handwritten digits ranging from 0 to 9.</p>
+<p>LeNet-5 was  developed for the purpose of document recognition.</p>
+<ul>
+<li>American Post office
+Zip Code</li>
+<li>Banking Systems
+Cheque</li>
+</ul>
+<h2 id="solving-the-main-problem">Solving the main problem</h2>
+<p>LeNet-5 tackles the main problem of handwritten digit recognition by utilizing convolutional layers to extract features from the input images and subsampling layers to reduce dimensionality while preserving important features.
+&ndash; efficient , power saving</p>
+<p>This hierarchical approach enables the network to learn hierarchical representations of the input data, leading to accurate digit classification.
+&ndash; automatic , higher accuracy for classification</p>
+<ul>
+<li>Handwritten Digit Recognition Need
+In the early 90s, automated recognition of handwritten digits was crucial for sectors like banking and postal services, but early systems struggled due to reliance on manual feature design and traditional processing techniques.</li>
+<li>Early Neural Network Constraints
+Limited computational power and lack of data hindered the effectiveness of neural networks in the 90s, affecting their performance and generalization.</li>
+<li>Computer Vision Challenges
+Before deep learning, computer vision relied on manually designed feature extractors, lacking flexibility and generality for diverse tasks.</li>
+</ul>
+<h2 id="result--contribution">Result &amp; Contribution</h2>
+<ul>
+<li><strong>Pioneering CNN Application</strong><br>
+LeNet-5 introduced Convolutional Neural Networks (CNNs) to handwritten digit recognition, marking the first successful application of CNNs in this field.</li>
+<li><strong>Hierarchical Structure Design and Parameter Sharing</strong><br>
+LeNet-5 proposed a hierarchical structure with convolutional and pooling layers, along with a parameter sharing mechanism, effectively reducing model parameters and enhancing generalization capability.</li>
+<li><strong>Reduced Preprocessing Need</strong> <br>
+LeNet-5 minimized preprocessing requirements by directly learning features from raw data, simplifying the recognition process for handwritten character recognition.</li>
+<li><strong>Introduction of Gradient-Based Learning</strong> <br>
+LeNet-5 introduced a gradient-based learning neural network structure, enabling automatic feature and pattern learning from data, leading to superior results compared to alternative methods in handwritten character recognition.</li>
+<li><strong>Impact on Deep Learning Development</strong><br>
+LeNet-5&rsquo;s successful application significantly influenced the advancement of deep learning, particularly in image recognition, laying the groundwork for subsequent research and applications in the field.</li>
+</ul>
+<h2 id="layers-key-skill">Layers (Key skill)</h2>
+<p>LeNet-5 consists of a total of 7 layers , trained on grayscale images of size 32 x 32 pixels.</p>
+<figure class="small"><img src="/images/ai/lenet-5.png"
+         alt="image"/><figcaption>
+            <p>Architecture of LeNet-5</p>
+        </figcaption>
+</figure>
+
+<ul>
+<li>x — Index of the layer</li>
+<li>Cx — Convolution layer</li>
+<li>Sx — Subsampling layer</li>
+<li>Fx — Fully-connected layer</li>
+</ul>
+<p>Key features</p>
+<ul>
+<li><strong>Local Perception</strong><br>
+LeNet-5 employs convolutional layers and pooling layers to achieve local perception. By sliding convolutional kernels over the input image, it captures local features, aiding in extracting spatial information from the image.</li>
+<li><strong>Weight Sharing</strong><br>
+LeNet-5 utilizes weight sharing, where the same convolutional kernel is applied across the entire image. This technique reduces the number of parameters in the network, mitigates overfitting risks, and enhances the model&rsquo;s generalization ability.</li>
+<li><strong>Multiple Convolutional Kernels</strong><br>
+Each convolutional layer in LeNet-5 typically consists of multiple convolutional kernels. These kernels learn different features, thereby increasing the network&rsquo;s ability to represent various aspects of the input image.</li>
+</ul>
+<p>A key skill employed by LeNet-5 is convolutional operation, which involves applying filters to the input image to extract features such as edges, corners, and textures. Additionally, LeNet-5 utilizes techniques like subsampling to downsample feature maps, reducing computational complexity while retaining important features.</p>
+<h3 id="note">Note</h3>
+<p>Output also know as feature map.<br>
+Kernel also know as filter<br>
+Number of Kernels determine the num of feature map.</p>
+<p>Computation of output size :<br>
+Input Size: (H,W)<br>
+Filter Size: (FH,FW)<br>
+Output Size: (OH,OW)<br>
+Padding : P</p>
+<p>$$
+OH = \frac{H + 2 \times P - FH}{S} + 1
+$$</p>
+<p>$$
+OW = \frac{W + 2 \times P - FW}{S} + 1
+$$</p>
+<h3 id="c1">C1</h3>
+<ul>
+<li>Input Size: <code>32*32</code></li>
+<li>Kernel Size: <code>5*5</code></li>
+<li>Number of Kernels: <code>6</code></li>
+<li>Stride: <code>1</code></li>
+<li>Output Size: <code>28*28</code></li>
+<li>Number of Outputs: <code>6</code></li>
+<li>Number of Perceptrons: <code>6 * 28*28</code></li>
+<li>Number of Trainable Parameters: <code>6 * (5*5+1)</code></li>
+<li>Number of Connections: <code>6 * (5*5+1) * 28 * 28</code></li>
+</ul>
+<p>Different convolutional kernels share the same weights. Thus, when the kernels slide over different positions, they all utilize the same set of weights for feature extraction. This approach reduces the number of parameters in the model while better capturing local features in images.</p>
+<p>This is because local features in images typically exhibit translation invariance.</p>
+<h3 id="s2">S2</h3>
+<ul>
+<li>Input Size: <code>28*28</code></li>
+<li>Pooling Window Size: <code>2*2</code></li>
+<li>Number of Pooling Window: <code>6</code></li>
+<li>Stride: <code>2</code></li>
+<li>Output Size: <code>14*14</code></li>
+<li>Number of Outputs: <code>6</code></li>
+<li>Number of Perceptrons: <code>6 * 14*14</code></li>
+<li>Number of Trainable Parameters: <code>6 * (1+1)</code>  (sampling weight + num of bias)</li>
+<li>Number of Connections: <code>6 * (2*2+1) * 14 * 14</code></li>
+</ul>
+<p>Average pooling<br>
+Activation Func : Sigmoid</p>
+<h3 id="c3">C3</h3>
+<ul>
+<li>Input Size: <code>14*14</code></li>
+<li>Kernel Size: <code>5*5</code></li>
+<li>Number of Kernels: <code>16</code></li>
+<li>Stride: <code>1</code></li>
+<li>Output Size: <code>10*10</code></li>
+<li>Number of Outputs: <code>16</code></li>
+<li>Number of Perceptrons: <code>6 * 14*14</code></li>
+<li>Number of Trainable Parameters: <code>6 * (3*(5*5) + 1) + 6*(4*(5*5)+1) + 3*(4*(5*5)+1) + 1*(6*5*5+1) = 1516</code></li>
+<li>Number of Connections: <code>10 * 10 * 1516</code></li>
+</ul>
+<p>// table?</p>
+<h3 id="s4">S4</h3>
+<ul>
+<li>Input Size: <code>10*10</code></li>
+<li>Pooling Window Size: <code>2*2</code></li>
+<li>Number of Pooling Window: <code>16</code></li>
+<li>Stride: <code>2</code></li>
+<li>Output Size: <code>5*5</code></li>
+<li>Number of Outputs: <code>16</code></li>
+<li>Number of Perceptrons: <code>16 * 5*5</code></li>
+<li>Number of Trainable Parameters: <code>16 * (1+1)</code>  (sampling weight + num of bias)</li>
+<li>Number of Connections: <code>6 * (2*2+1) * 5 * 5</code></li>
+</ul>
+<p>Average pooling<br>
+Activation Func : Sigmoid</p>
+<h3 id="c5-fully-connected-layer">C5 (fully-connected layer)</h3>
+<ul>
+<li>Input Size: <code>5*5</code></li>
+<li>Kernel Size: <code>5*5</code></li>
+<li>Number of Kernels: <code>120</code></li>
+<li>Stride: <code>1</code></li>
+<li>Output Size: <code>1*1</code></li>
+<li>Number of Outputs: <code>120</code></li>
+<li>Number of Perceptrons: <code>120 * 1</code></li>
+<li>Number of Trainable Parameters: <code>120 * (5*5*16+1)</code></li>
+<li>Number of Connections: <code>120 * (5*5*16+1) * 1 * 1</code></li>
+</ul>
+<p>channel increase into 16</p>
+<h3 id="f6">F6</h3>
+<ul>
+<li>Input Size: <code>1*120</code></li>
+<li>Output Size: <code>1*84</code></li>
+<li>Number of Outputs: <code>84</code></li>
+<li>Number of Perceptrons: <code>84</code></li>
+<li>Number of Trainable Parameters: <code>84 * (120 + 1)</code></li>
+</ul>
+<p>Activation Func : Sigmoid<br>
+bitmap  7*12</p>
+<h3 id="output-softmax">Output (Softmax)</h3>
+<ul>
+<li>Input Size: <code>1*84</code></li>
+<li>Output Size: <code>1*10</code></li>
+<li>Number of Outputs: <code>10</code></li>
+<li>Number of Perceptrons: <code>10</code></li>
+<li>Number of Trainable Parameters: <code>10 * (84+1)</code></li>
+</ul>
+<p>RBF<br>
+RBF参数的选择确保了F层的sigmoid函数不会饱和，从而使得网络能够在最大的非线性范围内操作，避免了慢收敛和损失函数病态化的问题。<br>
+have weight</p>
+<h2 id="gradian-descend">Gradian Descend</h2>
+<p>The commonly used loss function in LeNet-5 is the Cross Entropy Loss.<br>
+Cross Entropy Loss is a popular loss function used for classification tasks, widely applied in neural networks.</p>
+<p>SGD<br>
+Adam</p>
+<h2 id="hands-on-pytorch">Hands-On (pytorch)</h2>
+<h3 id="env">Env</h3>
+<p>Env: Pytorch (docker images pytorch/pytorch:2.1.1-cuda12.1-cudnn8-devel)<br>
+Tools: tersorboard</p>
+<ul>
+<li>Container
+Base for image  <code>yang_pytorch_env:20240307</code>
+<ul>
+<li>pytorch/pytorch:2.1.1-cuda12.1-cudnn8-devel</li>
+<li>Vim</li>
+<li>OpenSSH Server</li>
+</ul>
+<pre tabindex="0"><code># Dockerfile
+FROM yang_pytorch_env:20240307
+
+EXPOSE 8080 22
+
+RUN sed -i &#39;s/#PermitRootLogin prohibit-password/PermitRootLogin yes/&#39; /etc/ssh/sshd_config
+
+CMD [&#34;/usr/sbin/sshd&#34;, &#34;-D&#34;]
+</code></pre></li>
+<li>Run Container
+<pre tabindex="0"><code>docker run -itd --name yang_pytorch_env2 -v /home/ubuntu/yang_pytorch:/workspace -p 0.0.0.0:8080:8080 -p 0.0.0.0:8081:22 --gpus all --ipc=host yang_pytorch_env:20240307_2 /bin/sh -c &#34;while true; do echo hello world; sleep 1; done&#34;
+</code></pre></li>
+<li>Run Code
+<pre tabindex="0"><code>python3 lenet5.py
+</code></pre></li>
+<li>Tensorboard
+<pre tabindex="0"><code>pip install tensorboard
+tensorboard --logdir=runs --port 8080 --bind_all --reload_interval 1.0 --reload_multifile True
+</code></pre></li>
+</ul>
+<h3 id="model">Model</h3>
+<p>Over time and with the advancement of research, various improvements and optimizations have been proposed, primarily focusing on the handling of activation functions and layers in neural networks.</p>
+<ul>
+<li>Activation Functions:<br>
+LeNet-5 utilizes Sigmoid and Tanh functions to introduce nonlinearity, whereas modern neural networks more commonly employ ReLU (Rectified Linear Unit) as the activation function. The advantage of ReLU lies in its fast computation speed and avoidance of gradient vanishing issues during backpropagation.</li>
+<li>Nonlinearity Placement:<br>
+In LeNet-5, nonlinear activation is typically introduced after pooling layers. However, in modern neural networks, activation functions are usually applied immediately after convolutional layers, rather than introducing nonlinearity after pooling layers. This approach is more common as it aligns better with the design principles of neural networks and is easier to train.</li>
+<li>Subsampling Strategies in LeNet-5 and CNNs:
+Average Pooling vs. Max Pooling
+LeNet-5 and typical CNNs both utilize some form of subsampling layer to reduce the size of feature maps. However, LeNet-5 employs average pooling layers for subsampling, whereas typical CNNs commonly use max pooling layers.</li>
+</ul>
+<pre tabindex="0"><code># lenet-5 for training,validating by using gpu 
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+from torch.utils.tensorboard import SummaryWriter
+import time
+
+# Define the LeNet-5 model
+class LeNet5(nn.Module):
+    def __init__(self):
+        super(LeNet5, self).__init__()
+        # Layer C1: Convolutional layer
+        self.c1 = nn.Conv2d(in_channels=1, out_channels=6, kernel_size=5, padding=2)
+        # Layer S2: Sub-sampling layer -&gt; (Max-Pooling)
+        self.s2 = nn.MaxPool2d(kernel_size=2, stride=2)
+        # Layer C3: Convolutional layer
+        self.c3 = nn.Conv2d(in_channels=6, out_channels=16, kernel_size=5)
+        # Layer S4: Sub-sampling layer -&gt; (Max-Pooling)
+        self.s4 = nn.MaxPool2d(kernel_size=2, stride=2)
+        # Layer C5: Fully connected layer
+        self.c5 = nn.Linear(16 * 5 * 5, 120) 
+        # Layer F6: Fully connected layer
+        self.f6 = nn.Linear(120, 84)
+        # Output layer
+        self.output = nn.Linear(84, 10)
+
+    def forward(self, x):
+        # C1 layer
+        x = self.c1(x)
+        # Sigmoid -&gt; ReLu (After convolution layer)
+        x = nn.functional.relu(x)
+        # S2 layer
+        x = self.s2(x)
+        # C3 layer
+        x = self.c3(x)
+        # Sigmoid -&gt; ReLu (After convolution layer)
+        x = nn.functional.relu(x)
+        # S4 layer
+        x = self.s4(x)
+        # Flatten the output for fully connected layers
+        x = x.view(-1, 16 * 5 * 5)
+        # C5 layer
+        x = self.c5(x)
+        # Sigmoid -&gt; ReLu
+        x = nn.functional.relu(x)
+        # F6 layer
+        x = self.f6(x)
+        x = nn.functional.relu(x)
+        # Output layer
+        x = self.output(x)
+        return x
+
+ROOT_FOLDER_PATH = &#34;./data&#34;
+EPOCH = 10
+BATCH_SIZE = 64
+LR = 0.01
+
+device_name = &#34;&#34;
+# Check if CUDA is available
+if torch.cuda.is_available() :
+    print(&#34;GPU is available.&#34;)
+    device_name = &#34;cuda&#34;
+else :
+    print(&#34;Using CPU.&#34;)
+    device_name = &#34;cpu&#34;
+
+device = torch.device(device_name)
+
+# Load the dataset
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,))
+])
+train_dataset  = datasets.MNIST(root=ROOT_FOLDER_PATH, train=True, transform=transform, download=True)
+
+
+# Create DataLoader for training, validation, and test sets
+train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
+
+# Split train dataset into train and validation sets
+train_size = int(0.8 * len(train_dataset))
+val_size = len(train_dataset) - train_size
+train_dataset, val_dataset = torch.utils.data.random_split(train_dataset, [train_size, val_size])
+
+# Create DataLoader for training, validation, and test sets
+train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
+val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
+
+# Define the model, loss function, and optimizer
+model = LeNet5().to(device)
+criterion = nn.CrossEntropyLoss()
+
+# Gradient Descent
+optimizer = optim.Adam(model.parameters(), lr=LR)
+# Learning rate scheduler
+scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=3, gamma=0.1)  
+
+# Create a SummaryWriter
+writer = SummaryWriter()
+
+total_step = len(train_loader)
+
+start = time.time()
+
+# Train the model
+for epoch in range(EPOCH):
+    running_loss = 0.0
+    total_train_correct = 0
+    total_train_samples = 0
+    # Train the model
+    model.train()
+
+    # Training loop
+    for batch_index, (inputs, labels) in enumerate(train_loader):
+        inputs, labels = inputs.to(device), labels.to(device)
+
+        # Forward pass
+        outputs = model(inputs)
+        loss = criterion(outputs, labels)
+
+        # Backward pass
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        
+        running_loss += loss.item()
+
+        _, predicted = torch.max(outputs, 1)
+        total_train_correct += (predicted == labels).sum().item()
+        total_train_samples += labels.size(0)
+        
+        if (batch_index+1) % 100 == 0:
+            print(&#39;[Epoch %d/%d, Batch %d/%d] Train loss: %.3f&#39; % (epoch + 1,EPOCH, batch_index + 1,total_step, running_loss / total_step))
+            # Write loss to TensorBoard
+            writer.add_scalar(&#39;training_loss&#39;, running_loss / total_step, epoch * total_step + batch_index) 
+            running_loss = 0.0
+
+    # Validate the model
+    model.eval()
+    val_loss = 0.0
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for inputs, labels in val_loader:
+            inputs, labels = inputs.to(device), labels.to(device)
+            outputs = model(inputs)
+            loss = criterion(outputs, labels)
+            val_loss += loss.item()
+            _, predicted = outputs.max(1)
+            total += labels.size(0)
+            correct += predicted.eq(labels).sum().item()
+
+    # Adjust learning rate
+    scheduler.step()   
+
+    # Calculate and print statistics
+    train_loss = loss.item()
+    train_acc = correct / total
+    val_loss /= len(val_loader.dataset)
+    print(f&#34;Epoch {epoch + 1}/{EPOCH}, Train Loss: {train_loss:.4f}, Train Acc: {train_acc:.4f}, Val Loss: {val_loss:.4f}&#34;)
+
+    # Write accuracy to TensorBoard
+    writer.add_scalar(&#39;train_accuracy&#39;, train_acc, epoch)
+
+end = time.time()
+print(&#39;Finished Training&#39;)
+print(&#39;Cost time (sec): %d&#39; % (round(end - start, 2)))
+
+# Save the trained model
+torch.save(model.state_dict(), &#34;lenet5_mnist_model.pth&#34;)
+
+# Close the SummaryWriter after training
+writer.close()
+</code></pre><pre tabindex="0"><code># lenet-5 for testing by using gpu 
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+from torch.utils.tensorboard import SummaryWriter
+
+# Define the LeNet-5 model
+class LeNet5(nn.Module):
+    def __init__(self):
+        super(LeNet5, self).__init__()
+        # Layer C1: Convolutional layer
+        self.c1 = nn.Conv2d(in_channels=1, out_channels=6, kernel_size=5, padding=2)
+        # Layer S2: Sub-sampling layer -&gt; (Max-Pooling)
+        self.s2 = nn.MaxPool2d(kernel_size=2, stride=2)
+        # Layer C3: Convolutional layer
+        self.c3 = nn.Conv2d(in_channels=6, out_channels=16, kernel_size=5)
+        # Layer S4: Sub-sampling layer -&gt; (Max-Pooling)
+        self.s4 = nn.MaxPool2d(kernel_size=2, stride=2)
+        # Layer C5: Fully connected layer
+        self.c5 = nn.Linear(16 * 5 * 5, 120) 
+        # Layer F6: Fully connected layer
+        self.f6 = nn.Linear(120, 84)
+        # Output layer
+        self.output = nn.Linear(84, 10)
+
+    def forward(self, x):
+        # C1 layer
+        x = self.c1(x)
+        # Sigmoid -&gt; ReLu (After convolution layer)
+        x = nn.functional.relu(x)
+        # S2 layer
+        x = self.s2(x)
+        # C3 layer
+        x = self.c3(x)
+        # Sigmoid -&gt; ReLu (After convolution layer)
+        x = nn.functional.relu(x)
+        # S4 layer
+        x = self.s4(x)
+        # Flatten the output for fully connected layers
+        x = x.view(-1, 16 * 5 * 5)
+        # C5 layer
+        x = self.c5(x)
+        # Sigmoid -&gt; ReLu
+        x = nn.functional.relu(x)
+        # F6 layer
+        x = self.f6(x)
+        x = nn.functional.relu(x)
+        # Output layer
+        x = self.output(x)
+        return x
+
+ROOT_FOLDER_PATH = &#34;./data&#34;
+BATCH_SIZE = 64
+
+# Load the dataset
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,))
+])
+test_dataset = datasets.MNIST(root=ROOT_FOLDER_PATH, train=False, transform=transform, download=True)
+test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
+
+print(test_dataset.data.size())
+print(test_dataset.targets.size())
+
+device_name = &#34;&#34;
+# Check if CUDA is available
+if torch.cuda.is_available() :
+    print(&#34;GPU is available.&#34;)
+    device_name = &#34;cuda&#34;
+else :
+    print(&#34;Using CPU.&#34;)
+    device_name = &#34;cpu&#34;
+
+device = torch.device(device_name)
+
+model = LeNet5().to(device)
+# Testing
+# Load the model weights
+model.load_state_dict(torch.load(&#39;lenet5_mnist_model.pth&#39;))
+model.eval()  # Set model to evaluation mode
+
+total_test_correct = 0
+total_test_samples = 0
+
+with torch.no_grad():
+    for batch_index,(inputs, labels) in enumerate(test_loader):
+        inputs, labels = inputs.to(device), labels.to(device)
+        outputs = model(inputs)
+        _, predicted = torch.max(outputs.data, 1)
+        total_test_correct += (predicted == labels).sum().item()
+        total_test_samples += labels.size(0)
+
+print(f&#39;Test Accuracy: {100 * total_test_correct / total_test_samples}%&#39;)
+</code></pre><h3 id="check-gpu-support">Check gpu support</h3>
+<pre tabindex="0"><code>device = torch.device(&#34;cuda&#34; if torch.cuda.is_available() else &#34;cpu&#34;)
+# Define the model, loss function, and optimizer (gpu)
+model = LeNet5().to(device)
+# Move inputs and labels to GPU
+inputs, labels = inputs.to(device), labels.to(device)  
+</code></pre><h3 id="check-container-memory">Check container memory</h3>
+<pre tabindex="0"><code>docker stats
+</code></pre><h2 id="references">References</h2>
+<p><a href="https://pytorch.org/vision/main/generated/torchvision.datasets.MNIST.html">https://pytorch.org/vision/main/generated/torchvision.datasets.MNIST.html</a>
+<a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html">https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html</a><br>
+<a href="https://pytorch.org/docs/stable/generated/torch.optim.SGD.html">https://pytorch.org/docs/stable/generated/torch.optim.SGD.html</a>
+<a href="https://pytorch.org/docs/stable/generated/torch.Tensor.view.html">https://pytorch.org/docs/stable/generated/torch.Tensor.view.html</a>
+<a href="https://pytorch.org/docs/stable/generated/torch.no_grad.html">https://pytorch.org/docs/stable/generated/torch.no_grad.html</a>
+<a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.random_split">https://pytorch.org/docs/stable/data.html#torch.utils.data.random_split</a>
+<a href="https://pytorch.org/docs/stable/tensorboard.html">https://pytorch.org/docs/stable/tensorboard.html</a></p></div>
+    <div class="post__footer">
+      
+
+      
+        <span><a class="tag" href="/tags/ai/">AI</a></span>
+
+
+      
+    </div>
+
+    <div id="comment">
+          <h2>comments</h2>
+          <div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+        </div>
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>

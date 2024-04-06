@@ -5,11 +5,13 @@
     <link>https://microfish31.github.io/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 07 Feb 2024 02:57:39 +0000</lastBuildDate><atom:link href="https://microfish31.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <copyright>2024-{{ YEAR }}</copyright>
+    <lastBuildDate>Sun, 10 Mar 2024 13:54:14 +0800</lastBuildDate><atom:link href="https://microfish31.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI</title>
       <link>https://microfish31.github.io/tags/ai/</link>
-      <pubDate>Wed, 07 Feb 2024 02:57:39 +0000</pubDate>
+      <pubDate>Sun, 10 Mar 2024 13:54:14 +0800</pubDate>
       
       <guid>https://microfish31.github.io/tags/ai/</guid>
       
@@ -18,7 +20,62 @@
     </item>
     
     <item>
-      <title>trip</title>
+      <title>Medical</title>
+      <link>https://microfish31.github.io/tags/medical/</link>
+      <pubDate>Sun, 25 Feb 2024 14:53:44 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/tags/medical/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Parallel Computing</title>
+      <link>https://microfish31.github.io/tags/parallel-computing/</link>
+      <pubDate>Thu, 22 Feb 2024 00:31:56 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/tags/parallel-computing/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Investment</title>
+      <link>https://microfish31.github.io/tags/investment/</link>
+      <pubDate>Mon, 19 Feb 2024 23:28:48 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/tags/investment/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Recipe</title>
+      <link>https://microfish31.github.io/tags/recipe/</link>
+      <pubDate>Sun, 18 Feb 2024 19:53:11 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/tags/recipe/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Spirituality</title>
+      <link>https://microfish31.github.io/tags/spirituality/</link>
+      <pubDate>Sun, 11 Feb 2024 22:18:02 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/tags/spirituality/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Trip</title>
       <link>https://microfish31.github.io/tags/trip/</link>
       <pubDate>Sun, 04 Feb 2024 00:20:49 +0800</pubDate>
       

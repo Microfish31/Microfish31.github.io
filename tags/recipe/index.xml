@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recipe on </title>
+    <link>https://microfish31.github.io/tags/recipe/</link>
+    <description>Recent content in Recipe on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2024-{{ YEAR }}</copyright>
+    <lastBuildDate>Sun, 18 Feb 2024 19:53:11 +0800</lastBuildDate><atom:link href="https://microfish31.github.io/tags/recipe/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Recipe] - 生巧克力塔</title>
+      <link>https://microfish31.github.io/post/recipe-%E7%94%9F%E5%B7%A7%E5%85%8B%E5%8A%9B%E5%A1%94/</link>
+      <pubDate>Sun, 18 Feb 2024 19:53:11 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/recipe-%E7%94%9F%E5%B7%A7%E5%85%8B%E5%8A%9B%E5%A1%94/</guid>
+      
+        <description>&lt;p&gt;A Day as a Pastry Chef: Embarking on the Delicious Journey of a Ganache Tart Challenge&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

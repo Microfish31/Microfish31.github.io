@@ -5,7 +5,108 @@
     <link>https://microfish31.github.io/post/</link>
     <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 07 Feb 2024 04:58:58 +0000</lastBuildDate><atom:link href="https://microfish31.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <copyright>2024-{{ YEAR }}</copyright>
+    <lastBuildDate>Thu, 04 Apr 2024 21:40:13 +0800</lastBuildDate><atom:link href="https://microfish31.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[心靈成長] 24 歲的話</title>
+      <link>https://microfish31.github.io/post/%E5%BF%83%E9%9D%88%E6%88%90%E9%95%B7-24-%E6%AD%B2%E7%9A%84%E8%A9%B1/</link>
+      <pubDate>Thu, 04 Apr 2024 21:40:13 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/%E5%BF%83%E9%9D%88%E6%88%90%E9%95%B7-24-%E6%AD%B2%E7%9A%84%E8%A9%B1/</guid>
+      
+        <description>&lt;p&gt;Twilight of Youth: Ambition, Realizations, and the Pursuit of Dreams&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>[AI] - Paper Study (Lenet-5)</title>
+      <link>https://microfish31.github.io/post/ai-lenet-5-paper-study/</link>
+      <pubDate>Sun, 10 Mar 2024 13:54:14 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/ai-lenet-5-paper-study/</guid>
+      
+        <description>&lt;p&gt;Study for paper &amp;ldquo;Gradient Based Learning Applied to Document Recognition&amp;rdquo;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>[Medical] - 醫療與法律</title>
+      <link>https://microfish31.github.io/post/medical-%E9%86%AB%E7%99%82%E8%88%87%E6%B3%95%E5%BE%8B/</link>
+      <pubDate>Sun, 25 Feb 2024 14:53:44 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/medical-%E9%86%AB%E7%99%82%E8%88%87%E6%B3%95%E5%BE%8B/</guid>
+      
+        <description>&lt;p&gt;TBD&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>[Parallel Computing] - Concept</title>
+      <link>https://microfish31.github.io/post/parallel-computing-concept/</link>
+      <pubDate>Thu, 22 Feb 2024 00:31:56 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/parallel-computing-concept/</guid>
+      
+        <description>&lt;p&gt;TBD&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>[Investment] - 美元基礎</title>
+      <link>https://microfish31.github.io/post/investment-%E7%BE%8E%E5%85%83%E5%9F%BA%E7%A4%8E/</link>
+      <pubDate>Mon, 19 Feb 2024 23:28:48 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/investment-%E7%BE%8E%E5%85%83%E5%9F%BA%E7%A4%8E/</guid>
+      
+        <description>&lt;p&gt;TBD&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>[Recipe] - 生巧克力塔</title>
+      <link>https://microfish31.github.io/post/recipe-%E7%94%9F%E5%B7%A7%E5%85%8B%E5%8A%9B%E5%A1%94/</link>
+      <pubDate>Sun, 18 Feb 2024 19:53:11 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/recipe-%E7%94%9F%E5%B7%A7%E5%85%8B%E5%8A%9B%E5%A1%94/</guid>
+      
+        <description>&lt;p&gt;A Day as a Pastry Chef: Embarking on the Delicious Journey of a Ganache Tart Challenge&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>[心靈成長] - 修身</title>
+      <link>https://microfish31.github.io/post/%E5%BF%83%E9%9D%88%E6%88%90%E9%95%B7-%E4%BF%AE%E8%BA%AB/</link>
+      <pubDate>Sun, 11 Feb 2024 22:18:02 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/%E5%BF%83%E9%9D%88%E6%88%90%E9%95%B7-%E4%BF%AE%E8%BA%AB/</guid>
+      
+        <description>&lt;p&gt;Seek the cause in oneself.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>[AI] - 環境建置</title>
+      <link>https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/</link>
+      <pubDate>Sun, 11 Feb 2024 20:25:28 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/</guid>
+      
+        <description>&lt;p&gt;Build AI development env for learning.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>[AI] - 模型學習</title>
+      <link>https://microfish31.github.io/post/ai-%E6%A8%A1%E5%9E%8B%E5%AD%B8%E7%BF%92/</link>
+      <pubDate>Fri, 09 Feb 2024 11:41:35 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/ai-%E6%A8%A1%E5%9E%8B%E5%AD%B8%E7%BF%92/</guid>
+      
+        <description>&lt;p&gt;Elaborating on Model Learning.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>[AI] - 模型</title>
       <link>https://microfish31.github.io/post/ai-%E6%A8%A1%E5%9E%8B/</link>
@@ -13,7 +114,7 @@
       
       <guid>https://microfish31.github.io/post/ai-%E6%A8%A1%E5%9E%8B/</guid>
       
-        <description></description>
+        <description>&lt;p&gt;Let&amp;rsquo;s talk about AI model.&lt;/p&gt;</description>
       
     </item>
     
