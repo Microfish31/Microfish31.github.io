@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <title>
+    Microfish
+        |
+        Paper Study (Yolo-v3 Application)
+      
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.123.7"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Microfish" />
+  <meta
+    name="description"
+    content="Love travel , love writing."
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.26d8396ded3f4aa47cc8d77a9fcb09fee1d20d223c6b3f074a21c7e217bc8c6d.css"
+      integrity="sha256-Jtg5be0/SqR8yNd6n8sJ/uHSDSI8az8HSiHH4he8jG0="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css"
+    integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css"
+    integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css"
+    integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://microfish31.github.io/post/ai-yolov3-application/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Paper Study (Yolo-v3 Application)"/>
+<meta name="twitter:description" content="Study for paper &ldquo;Gradient Based Learning Applied to Document Recognition&rdquo;."/>
+
+
+
+  
+  <meta property="og:title" content="Paper Study (Yolo-v3 Application)" />
+<meta property="og:description" content="Study for paper &ldquo;Gradient Based Learning Applied to Document Recognition&rdquo;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://microfish31.github.io/post/ai-yolov3-application/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-04-28T22:44:43+08:00" />
+<meta property="article:modified_time" content="2024-04-28T22:44:43+08:00" /><meta property="og:site_name" content="Microfish" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Paper Study (Yolo-v3 Application)",
+        "headline": "Paper Study (Yolo-v3 Application)",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eStudy for paper \u0026ldquo;Gradient Based Learning Applied to Document Recognition\u0026rdquo;.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "en",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/microfish31.github.io\/post\/ai-yolov3-application\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightYear" : "2024",
+        "dateCreated": "2024-04-28T22:44:43.00Z",
+        "datePublished": "2024-04-28T22:44:43.00Z",
+        "dateModified": "2024-04-28T22:44:43.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Microfish",
+            "url": "https://microfish31.github.io/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/microfish31.github.io\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/microfish31.github.io\/post\/ai-yolov3-application\/",
+        "wordCount" : "725",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "AI"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://avatars.githubusercontent.com/u/75024370?v=4"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Microfish</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Love travel , love writing.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >Portfolio</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/contact/"
+              
+              title=""
+              >Contact</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>Paper Study (Yolo-V3 Application)</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Sun, Apr 28, 2024
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">4-minute read</span>
+          </li>
+        </ul>
+      <p>Study for paper &ldquo;Gradient Based Learning Applied to Document Recognition&rdquo;.</p>
+<h2 id="paper">Paper</h2>
+<p><strong>Title:</strong> A Novel Implementation of an AI-Based Smart Construction Safety Inspection Protocol in the UAE<br>
+<strong>Authors:</strong> Mohammad Z. Shanti, Chung-Suk Cho, Young-Ji Byon, Chan Yeob Yeun, Tae-Yeon Kim, Song-Kyoo Kim, Ahmed Altunaiji<br>
+<strong>Publisher:</strong> IEEE<br>
+<strong>Published in:</strong> Proceedings of the IEEE<br>
+<strong>Date of Publication:</strong> 14 December 2021<br>
+<strong>IEEE Keywords:</strong><br>
+Safety, Artificial intelligence, Accidents, Injuries, Regulation, Inspection, Head<br>
+<strong>Source Literature:</strong> <a href="https://ieeexplore.ieee.org/document/9650892">https://ieeexplore.ieee.org/document/9650892</a></p>
+<h2 id="summary">Summary</h2>
+<p>The paper presents a novel AI-based technique for monitoring worker safety at construction sites in the UAE. Using a Convolutional Neural Network (CNN) model, the system detects compliance with safety standards, particularly the Personal Fall Arrest System (PFAS), including <code>safety harnesses</code>, <code>lifelines</code>, and <code>safety helmets</code>. With impressive accuracy and precision rates, the model proves effective in preventing accidents and controlling safety violations, offering a significant contribution to mitigating fall-from-height incidents.</p>
+<h2 id="background">Background</h2>
+<ol>
+<li><strong>Construction Industry Outlook:</strong><br>
+The construction industry in the UAE is expected to experience significant growth over the next five years due to increased investment, government diversification efforts, and favorable economic conditions driven by rising crude-oil prices and non-oil product exports.
+Safety Challenges: Despite the booming construction industry, ensuring the safety and health of workers remains a challenge. Safety measures are not fully embedded in the industry culture, leading to a rise in work-related incidents and accidents.</li>
+<li><strong>Regulatory Efforts:</strong><br>
+The Abu Dhabi Municipality (ADM) has established environment, health, and safety (EHS) regulations for local construction sites. Regulatory authorities conduct enforcement activities, including on-site inspections and penalties, to ensure compliance. However, studies show that incidents and fatalities are still increasing.</li>
+<li><strong>Occupational Injuries:</strong><br>
+Occupational injuries account for a significant portion of all injuries in Abu Dhabi, with falls and falling objects being the leading cause. Fall-from-height incidents are particularly prevalent, highlighting the need for improved safety measures.</li>
+<li><strong>Importance of Employee Awareness:</strong><br>
+Given the high-risk nature of construction work in the UAE, improving employee awareness of health and safety issues and ensuring compliance with regulations are crucial to preventing injuries, fatalities, and economic losses.</li>
+<li><strong>Role of AI in Safety:</strong><br>
+Recent advancements in AI technology offer opportunities to enhance construction safety. Deep learning (DL) techniques, such as YOLOv3, can be used for on-site detection and recognition of work-safety violations, including violations related to falls from heights. However, there is a lack of research applying DL approaches specifically to construction safety inspections.</li>
+<li><strong>Research Contribution:</strong><br>
+The paper aims to address this gap by leveraging AI technologies to improve safety inspections at construction sites, particularly focusing on fall protection violations. It proposes enhancing DL approaches for reliable detection and recognition of safety violations using raw image data.</li>
+</ol>
+<h2 id="solving-the-main-problem">Solving the main problem</h2>
+<p>Reduce accidents when working at heights.</p>
+<ol>
+<li><strong>Approach:</strong><br>
+Developed a deep learning model to detect main components of the Personal Fall Arrest System (PFAS).</li>
+<li><strong>Methodology:</strong><br>
+YOLOv3 algorithm applied to a Convolutional Neural Network (CNN) model.</li>
+<li><strong>Validation:</strong><br>
+The model was theoretically and experimentally verified using real-life image data.</li>
+<li><strong>Application:</strong><br>
+Designed for practical implementation at construction sites.</li>
+</ol>
+<h2 id="result--contribution">Result &amp; Contribution</h2>
+<p>The main contribution of this paper is to provide an AI-based image detection framework to mitigate the likelihood of fall-from-height accidents.</p>
+<h2 id="yolov3-structure">YOLOv3 Structure</h2>
+<figure class="medium"><img src="/images/ai/yolov3_network_architecture.png"
+         alt="image"/><figcaption>
+            <p>Architecture of Yolov3</p>
+        </figcaption>
+</figure>
+
+<h2 id="yolov3-feature">YOLOv3 Feature</h2>
+<ol>
+<li><strong>High Speed:</strong><br>
+YOLOv3 demonstrates high speed in object detection, capable of processing high-resolution images and videos in real-time.</li>
+<li><strong>Single Shot MultiBox Detector (SSD):</strong><br>
+YOLOv3 is an SSD model, allowing simultaneous prediction of multiple bounding boxes and object classes in a single forward pass.</li>
+<li><strong>Multi-scale Detection:</strong><br>
+YOLOv3 performs detection at multiple scales, effectively detecting objects of various sizes and aspect ratios.</li>
+<li><strong>Deep Learning-based Feature Extraction:</strong><br>
+YOLOv3 utilizes deep neural networks (DNNs) to extract features from images, used for object detection and classification.</li>
+<li><strong>Hierarchical Detection:</strong> <br>
+YOLOv3 employs hierarchical detection to improve the detection performance of small-sized objects, enhancing its performance in various scenarios.</li>
+<li><strong>Multi-scale Training:</strong><br>
+YOLOv3 undergoes multi-scale training to improve the model&rsquo;s generalization ability, enabling effective detection on images with different resolutions.</li>
+<li><strong>Loss Function Design:</strong><br>
+YOLOv3 uses a specialized loss function for training, considering both the accuracy of bounding box positions and object class predictions.</li>
+</ol>
+<h2 id="key-words">Key Words</h2>
+<ul>
+<li>SSD（Single Shot MultiBox Detector）</li>
+<li>One stage、two stage Object Detection</li>
+<li>Ground Truth means labeled images or videos</li>
+<li>NMS (non-max suppression)</li>
+<li>Skip Connections
+解決了深度神經網絡的退化問題</li>
+<li>multi-part loss function.</li>
+<li>Bounding Box</li>
+<li>Anchor Box</li>
+<li>Darknet Basic Block with a shortcut connection Layer (DBL)</li>
+<li>Loss
+<ul>
+<li>Localization Loss</li>
+<li>Classification Loss</li>
+<li>Confidence Loss</li>
+</ul>
+</li>
+<li>Shortcut Connection Layer</li>
+<li>Feature Pyramid Network
+用於目標檢測和語義分割等計算機視覺任務的神經網絡架構。它的主要目的是處理不同尺度的特徵以提高模型對物體的檢測和分割能力</li>
+</ul>
+<h2 id="references">References</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/397293649">https://zhuanlan.zhihu.com/p/397293649</a>
+<a href="https://ivan-eng-murmur.medium.com/%E7%89%A9%E4%BB%B6%E5%81%B5%E6%B8%AC-s8-feature-pyramid-networks-%E7%B0%A1%E4%BB%8B-99b676245b25">https://ivan-eng-murmur.medium.com/%E7%89%A9%E4%BB%B6%E5%81%B5%E6%B8%AC-s8-feature-pyramid-networks-%E7%B0%A1%E4%BB%8B-99b676245b25</a>
+<a href="https://chih-sheng-huang821.medium.com/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92-%E7%89%A9%E4%BB%B6%E5%81%B5%E6%B8%AC-you-only-look-once-yolo-4fb9cf49453c">https://chih-sheng-huang821.medium.com/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92-%E7%89%A9%E4%BB%B6%E5%81%B5%E6%B8%AC-you-only-look-once-yolo-4fb9cf49453c</a><br>
+<a href="https://chih-sheng-huang821.medium.com/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92-%E4%BB%80%E9%BA%BC%E6%98%AFone-stage-%E4%BB%80%E9%BA%BC%E6%98%AFtwo-stage-%E7%89%A9%E4%BB%B6%E5%81%B5%E6%B8%AC-fc3ce505390f">https://chih-sheng-huang821.medium.com/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92-%E4%BB%80%E9%BA%BC%E6%98%AFone-stage-%E4%BB%80%E9%BA%BC%E6%98%AFtwo-stage-%E7%89%A9%E4%BB%B6%E5%81%B5%E6%B8%AC-fc3ce505390f</a>
+<a href="https://polakowo.io/datadocs/docs/deep-learning/object-detection#yolov3">https://polakowo.io/datadocs/docs/deep-learning/object-detection#yolov3</a><br>
+<a href="https://chih-sheng-huang821.medium.com/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E7%B3%BB%E5%88%97-%E4%BB%80%E9%BA%BC%E6%98%AFap-map-aaf089920848">https://chih-sheng-huang821.medium.com/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E7%B3%BB%E5%88%97-%E4%BB%80%E9%BA%BC%E6%98%AFap-map-aaf089920848</a></p></div>
+    <div class="post__footer">
+      
+
+      
+        <span><a class="tag" href="/tags/ai/">AI</a></span>
+
+
+      
+    </div>
+
+    <div id="comment">
+          <h2>comments</h2>
+          <div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+        </div>
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2024
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>
