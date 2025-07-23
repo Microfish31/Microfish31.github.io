@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UML on </title>
+    <link>https://microfish31.github.io/tags/uml/</link>
+    <description>Recent content in UML on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2024-{{ YEAR }}</copyright>
+    <lastBuildDate>Fri, 16 Aug 2024 06:22:37 +0000</lastBuildDate><atom:link href="https://microfish31.github.io/tags/uml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Class Diagrams</title>
+      <link>https://microfish31.github.io/post/uml-class-diagrams/</link>
+      <pubDate>Fri, 16 Aug 2024 06:22:37 +0000</pubDate>
+      
+      <guid>https://microfish31.github.io/post/uml-class-diagrams/</guid>
+      
+        <description>&lt;p&gt;Six types of class diagrams&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

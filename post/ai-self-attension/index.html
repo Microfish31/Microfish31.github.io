@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <title>
+    Microfish
+        |
+        Self Attention
+      
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.123.7"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Microfish" />
+  <meta
+    name="description"
+    content="Love travel , love writing."
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.26d8396ded3f4aa47cc8d77a9fcb09fee1d20d223c6b3f074a21c7e217bc8c6d.css"
+      integrity="sha256-Jtg5be0/SqR8yNd6n8sJ/uHSDSI8az8HSiHH4he8jG0="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css"
+    integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css"
+    integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css"
+    integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://microfish31.github.io/post/ai-self-attension/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Self Attention"/>
+<meta name="twitter:description" content="Basic concept for the self-attention mechanism."/>
+
+
+
+  
+  <meta property="og:title" content="Self Attention" />
+<meta property="og:description" content="Basic concept for the self-attention mechanism." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://microfish31.github.io/post/ai-self-attension/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-08-04T17:33:39+08:00" />
+<meta property="article:modified_time" content="2024-08-04T17:33:39+08:00" /><meta property="og:site_name" content="Microfish" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Self Attention",
+        "headline": "Self Attention",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eBasic concept for the self-attention mechanism.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "en",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/microfish31.github.io\/post\/ai-self-attension\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightYear" : "2024",
+        "dateCreated": "2024-08-04T17:33:39.00Z",
+        "datePublished": "2024-08-04T17:33:39.00Z",
+        "dateModified": "2024-08-04T17:33:39.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Microfish",
+            "url": "https://microfish31.github.io/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/microfish31.github.io\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/microfish31.github.io\/post\/ai-self-attension\/",
+        "wordCount" : "532",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "AI"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://avatars.githubusercontent.com/u/75024370?v=4"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Microfish</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Love travel , love writing.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >Portfolio</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/contact/"
+              
+              title=""
+              >Contact</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>Self Attention</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Sun, Aug 4, 2024
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">3-minute read</span>
+          </li>
+        </ul>
+      <p>Basic concept for the self-attention mechanism.</p>
+<h2 id="prerequisite">Prerequisite</h2>
+<h2 id="introduction">Introduction</h2>
+<p>self-attention 是用來處理的輸入的資訊是一排句子或是像是聲音，可以表示成向量的形式資訊。
+Self-attention 的公式描述了如何計算每個 token 與序列中其他 token 的關聯性，並用這些關聯性來更新 token 的表示。</p>
+<h2 id="how-self-attention-working">How Self-Attention working?</h2>
+<p>Q: Query (what information do I need?)<br>
+K: Key (what information can I provide?)<br>
+V: Value (the actual information I hold)</p>
+<p>The self-attention mechanism evaluates the same input sequence that it processes.</p>
+<h2 id="self-attension-mechanism">Self-Attension Mechanism</h2>
+<h3 id="數學完整計算過程">數學完整計算過程</h3>
+<ol>
+<li><strong>生成 Query、Key 和 Value 矩陣</strong></li>
+<li><strong>計算注意力分數</strong></li>
+<li><strong>進行 softmax 歸一化</strong></li>
+<li><strong>加權求和得到輸出</strong></li>
+</ol>
+<h3 id="formula">Formula</h3>
+<p>以下是 Self-attention 的主要公式：</p>
+<ol>
+<li>
+<p><strong>Query、Key 和 Value 矩陣</strong>：</p>
+<ul>
+<li>首先，從輸入矩陣 \( X \) 生成 Query (\( Q \))、Key (\( K \)) 和 Value (\( V \)) 矩陣：
+$$
+Q = XW_Q  , K = XW_K  , V = XW_V
+$$
+其中 \( W_Q \)、\( W_K \) 和 \( W_V \) 是學習到的權重矩陣。</li>
+</ul>
+</li>
+<li>
+<p><strong>Attention Scores</strong>：</p>
+<ul>
+<li>計算 Query 和 Key 的點積來獲得注意力分分數：</li>
+</ul>
+<p>$$
+\text{ Attention Scores } = \frac{QK^T}{\sqrt{d_k}}
+$$</p>
+<p>其中 \( d_k \) 是 Key 的維度，這裡的 \(\sqrt{d_k}\) 是一個縮放因子，用來防止點積值過大。</p>
+</li>
+<li>
+<p><strong>Softmax</strong>：</p>
+<ul>
+<li>對注意力分數進行 softmax 歸一化以獲得注意力權重：<br>
+$$
+\text{Attention Weights} = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)
+$$</li>
+</ul>
+</li>
+<li>
+<p><strong>加權求和</strong>：</p>
+<ul>
+<li>使用注意力權重對 Value 進行加權求和，得到輸出矩陣：<br>
+$$
+\text{Output} = \text{Attention Weights} \cdot V
+$$</li>
+</ul>
+</li>
+</ol>
+<p>結合所有步驟，Self-attention 的計算公式可以表示為：</p>
+<p>$$
+\text{SelfAttention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) \cdot V
+$$</p>
+<h3 id="program">Program</h3>
+<ol>
+<li>Use query matrix to dot transposed key matrix, get scores</li>
+<li>Softmax the score matix get attention probability</li>
+<li>Use attention probability matrix dots value matrix</li>
+</ol>
+<h3 id="implementation">Implementation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># vector to probability</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">soft_max</span>(z):
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>exp(z)
+</span></span><span style="display:flex;"><span>    print(np<span style="color:#f92672">.</span>sum(t, axis<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>exp(z) <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>expand_dims(np<span style="color:#f92672">.</span>sum(t, axis<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>), <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># attention demo</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;attention demo&#34;</span>)
+</span></span><span style="display:flex;"><span>Query <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([
+</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>],
+</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>],
+</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Key <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([
+</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>],
+</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Value <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([
+</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>],
+</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> Query <span style="color:#f92672">@</span> Key<span style="color:#f92672">.</span>T
+</span></span><span style="display:flex;"><span>print(scores)
+</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> soft_max(scores)
+</span></span><span style="display:flex;"><span>print(scores)
+</span></span><span style="display:flex;"><span>out <span style="color:#f92672">=</span> scores <span style="color:#f92672">@</span> Value
+</span></span><span style="display:flex;"><span>print(out)
+</span></span></code></pre></div><h2 id="muti-head-self-attension-mechanism">Muti-Head Self-Attension Mechanism</h2>
+<p>多頭自注意力（Multi-Head Self-Attention）是Transformer模型中一個重要的組成部分，它在處理序列數據時具有強大的特徵提取能力。以下是將單頭自注意力改成多頭自注意力的過程：</p>
+<h3 id="多頭自注意力的步驟">多頭自注意力的步驟</h3>
+<p>在多頭自注意力（Multi-Head Self-Attention）中，<strong>並不</strong>是直接切分輸入，而是通過多個線性投影來分別計算不同的查詢（Query）、鍵（Key）和值（Value）。這些投影之後的查詢、鍵和值矩陣被分配到不同的頭進行注意力計算。以下是詳細解釋：</p>
+<h3 id="多頭自注意力的計算過程">多頭自注意力的計算過程</h3>
+<ol>
+<li>
+<p><strong>整體輸入</strong>：</p>
+<ul>
+<li>首先，輸入 (X) 是一個整體。對於一個序列長度為 (T)，特徵維度為 (D) 的輸入 (X) 來說，輸入張量的形狀是 ((T, D))。</li>
+</ul>
+</li>
+<li>
+<p><strong>線性投影</strong>：</p>
+<ul>
+<li>將輸入 (X) 分別通過三個線性投影得到查詢、鍵和值矩陣。每個頭都有自己的查詢、鍵和值權重矩陣，這些權重矩陣將原始輸入轉換為每個頭的查詢、鍵和值。</li>
+<li>對於第 (i) 個頭，這個過程可以表示為：
+[
+Q_i = XW_Q^i, \quad K_i = XW_K^i, \quad V_i = XW_V^i
+]</li>
+<li>其中，(W_Q^i)、(W_K^i)、(W_V^i) 是第 (i) 個頭的查詢、鍵和值的權重矩陣。</li>
+</ul>
+</li>
+<li>
+<p><strong>分割頭</strong>：</p>
+<ul>
+<li>對於每個頭，將線性投影的結果分割為多個頭。假設多頭數為 (h)，每個頭的維度為 (\frac{D}{h})。</li>
+<li>在這一步，每個查詢、鍵和值矩陣都被重新組織，使得每個頭都有自己的一組查詢、鍵和值。</li>
+<li>例如，假設 (X) 的形狀是 ((T, D))，經過線性投影後，我們得到 ((T, h, \frac{D}{h})) 的形狀，這裡 (\frac{D}{h}) 是每個頭的特徵維度。</li>
+</ul>
+</li>
+<li>
+<p><strong>計算每個頭的自注意力</strong>：</p>
+<ul>
+<li>對於每個頭，計算自注意力輸出：
+[
+\text{Attention}_i = \text{softmax}\left(\frac{Q_iK_i^T}{\sqrt{d_k}}\right)V_i
+]</li>
+<li>這裡 (d_k) 是每個頭的鍵的維度，即 (\frac{D}{h})。</li>
+</ul>
+</li>
+<li>
+<p><strong>連接頭的輸出</strong>：</p>
+<ul>
+<li>將所有頭的自注意力輸出連接起來，形成一個新的矩陣，形狀為 ((T, D))。</li>
+<li>這一步確保了每個頭的輸出都被融合回到原始維度中，為後續的輸出投影和處理做準備。</li>
+</ul>
+</li>
+<li>
+<p><strong>輸出投影</strong>：</p>
+<ul>
+<li>最後，通過一個線性層將連接後的頭的輸出進行投影，以產生最終的輸出。</li>
+</ul>
+</li>
+</ol>
+<h3 id="總結">總結</h3>
+<p>多頭自注意力的核心在於對輸入進行線性投影，並不是直接切分輸入。這種方法可以讓模型在不同的頭之間學習不同的特徵表示，使得整個模型更具表達能力和靈活性。每個頭處理的數據都是從輸入投影而來，而不是直接分割輸入數據。</p>
+<h3 id="implementation-1">Implementation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># vector to probability</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">soft_max</span>(z):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># z_max = np.max(z, axis=-1, keepdims=True)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># t = np.exp(z - z_max)</span>
+</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>exp(z)
+</span></span><span style="display:flex;"><span>    print(np<span style="color:#f92672">.</span>sum(t, axis<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>exp(z) <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>expand_dims(np<span style="color:#f92672">.</span>sum(t, axis<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>), <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># attention for Encoder</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;attention for Encoder&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>values_length <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>num_attention_heads <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>hidden_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">768</span>
+</span></span><span style="display:flex;"><span>attention_head_size <span style="color:#f92672">=</span> hidden_size <span style="color:#f92672">//</span> num_attention_heads
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Query <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(values_length, hidden_size)
+</span></span><span style="display:flex;"><span>Key <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(values_length, hidden_size)
+</span></span><span style="display:flex;"><span>Value <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(values_length, hidden_size)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Query <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(Query, [values_length, num_attention_heads, attention_head_size])
+</span></span><span style="display:flex;"><span>Key <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(Key, [values_length, num_attention_heads, attention_head_size])
+</span></span><span style="display:flex;"><span>Value <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(Value, [values_length, num_attention_heads, attention_head_size])
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(Query))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Query <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>transpose(Query, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>Key <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>transpose(Key, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>Value <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>transpose(Value, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(Query))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> Query <span style="color:#f92672">@</span> np<span style="color:#f92672">.</span>transpose(Key, [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]) <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sqrt(attention_head_size)
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(np<span style="color:#f92672">.</span>transpose(Key, [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>])))
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(scores))
+</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> soft_max(scores)
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(scores))
+</span></span><span style="display:flex;"><span>out <span style="color:#f92672">=</span> scores <span style="color:#f92672">@</span> Value
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(out))
+</span></span><span style="display:flex;"><span>out <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>transpose(out, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(out))
+</span></span><span style="display:flex;"><span>out <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(out, [values_length , <span style="color:#ae81ff">768</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output Projection Matrix</span>
+</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(out))
+</span></span></code></pre></div><h2 id="the-main-difference-between-self-attension-and-attension">The main difference between self-attension and attension</h2>
+<ul>
+<li>
+<p>Attention 是在兩個不同的序列之間建立聯繫，比如翻譯中的源語言和目標語言
+example :　在翻譯「cat」時，模型會「注意」英文句子中的 &ldquo;cat&rdquo;</p>
+</li>
+<li>
+<p>Self-Attention 是在同一個序列內部建立聯繫，比如在一個句子中的不同詞之間建立關聯
+　example:　&ldquo;The cat sat on the mat.&rdquo;
+　在翻譯「cat」時，模型會「注意」英文句子中的 &ldquo;cat&rdquo;。</p>
+</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1Rm411S7ML/?spm_id_from=333.337.search-card.all.click&amp;vd_source=81d1d4cbe35f72f4b8ba3df191725046">深入浅出Self-Attention自注意力机制与Transformer模块-自注意力机制详解</a></li>
+<li><a href="https://blog.csdn.net/weixin_44791964/article/details/135423390">神经网络学习小记录77——深入浅出Self-Attention自注意力机制与Transformer模块</a></li>
+<li><a href="https://medium.com/@punya8147_26846/difference-between-self-attention-and-multi-head-self-attention-e33ebf4f3ee0">Difference between Self-Attention and Multi-head Self-Attention</a></li>
+<li><a href="https://www.cs.toronto.edu/~kriz/cifar.html">The CIFAR-10 dataset</a></li>
+</ul></div>
+    <div class="post__footer">
+      
+
+      
+        <span><a class="tag" href="/tags/ai/">AI</a></span>
+
+
+      
+    </div>
+
+    <div id="comment">
+          <h2>comments</h2>
+          <div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+        </div>
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>
+
+<script src="https://unpkg.com/mermaid@8.13.4/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>

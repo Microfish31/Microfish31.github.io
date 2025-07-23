@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <title>
+    Microfish
+        |
+        Argo
+      
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.123.7"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Microfish" />
+  <meta
+    name="description"
+    content="Love travel , love writing."
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.26d8396ded3f4aa47cc8d77a9fcb09fee1d20d223c6b3f074a21c7e217bc8c6d.css"
+      integrity="sha256-Jtg5be0/SqR8yNd6n8sJ/uHSDSI8az8HSiHH4he8jG0="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css"
+    integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css"
+    integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css"
+    integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://microfish31.github.io/post/cicd-argo/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Argo"/>
+<meta name="twitter:description" content="Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes."/>
+
+
+
+  
+  <meta property="og:title" content="Argo" />
+<meta property="og:description" content="Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://microfish31.github.io/post/cicd-argo/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-08-09T06:17:17+00:00" />
+<meta property="article:modified_time" content="2024-08-09T06:17:17+00:00" /><meta property="og:site_name" content="Microfish" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Argo",
+        "headline": "Argo",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eArgo CD is a declarative, GitOps continuous delivery tool for Kubernetes.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "en",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/microfish31.github.io\/post\/cicd-argo\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightYear" : "2024",
+        "dateCreated": "2024-08-09T06:17:17.00Z",
+        "datePublished": "2024-08-09T06:17:17.00Z",
+        "dateModified": "2024-08-09T06:17:17.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Microfish",
+            "url": "https://microfish31.github.io/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/microfish31.github.io\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/microfish31.github.io\/post\/cicd-argo\/",
+        "wordCount" : "509",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "cicd"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://avatars.githubusercontent.com/u/75024370?v=4"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Microfish</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Love travel , love writing.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >Portfolio</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/contact/"
+              
+              title=""
+              >Contact</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>Argo</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Fri, Aug 9, 2024
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">3-minute read</span>
+          </li>
+        </ul>
+      <p>Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.</p>
+<h2 id="target">Target</h2>
+<div
+  class="notice"
+>
+  <span
+    class="notice__title"
+  ></span><div class="notice__content">
+    <p>Integrate ArgoCD with GitLab and automatically deploy repository data to different Kubernetes clusters.</p>
+<p><a href="https://argoproj.github.io/"><strong>ArgoCD</strong></a></p>
+  </div>
+</div>
+<h2 id="task">Task</h2>
+<h4 id="argocd-info">ArgoCD info</h4>
+<ul>
+<li><a href="http://10.1.5.100:30080/login">10.1.5.100:30080</a></li>
+<li>Account : admin</li>
+<li>Password : admin</li>
+</ul>
+<h4 id="system-structure">System structure</h4>
+<p><img src="/images/cicd/argo_system.png" alt="argo_system"></p>
+<h4 id="helm-repo">Helm repo</h4>
+<ul>
+<li>
+<p><a href="https://gitlab.com/leadtek/argo-example-apps/-/tree/argo-nginx?ref_type=heads">Gitlab - argo-example-apps</a></p>
+<blockquote>
+<p>You need gitlab repo token to let ArgoCD pull your repo.<br>
+<a href="https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html#create-a-project-access-token">Create a project access token</a></p>
+</blockquote>
+</li>
+<li>
+<p>helm-nginx folder</p>
+<pre tabindex="0"><code>.
+├── CHANGELOG.md
+├── Chart.lock
+├── Chart.yaml
+├── README.md
+├── templates
+│   ├── deployment.yaml
+│   ├── extra-list.yaml
+│   ├── health-ingress.yaml
+│   ├── _helpers.tpl
+│   ├── hpa.yaml
+│   ├── ingress-tls-secret.yaml
+│   ├── ingress.yaml
+│   ├── networkpolicy.yaml
+│   ├── NOTES.txt
+│   ├── pdb.yaml
+│   ├── prometheusrules.yaml
+│   ├── server-block-configmap.yaml
+│   ├── serviceaccount.yaml
+│   ├── servicemonitor.yaml
+│   ├── svc.yaml
+│   └── tls-secret.yaml
+├── values.schema.json
+└── values.yaml
+
+1 directory, 22 files
+</code></pre><p><a href="https://gitlab.com/leadtek/argo-example-apps/-/tree/argo-nginx/helm-nginx?ref_type=heads">helm-nginx</a></p>
+</li>
+</ul>
+<h2 id="my-task">My task</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Use Argo to deploy an NGINX service at 10.1.5.100 in the <code>argotest</code> namespace.</li>
+<li><input checked="" disabled="" type="checkbox"> Change the container tag in a pod and check whether Argo is syncing or not.</li>
+<li><input checked="" disabled="" type="checkbox"> Add k8s cluster (10.1.5.201) to current cluster.</li>
+<li><input checked="" disabled="" type="checkbox"> Use Argo to deploy an NGINX service in another Kubernetes cluster at 10.1.5.201</li>
+</ul>
+<p>ps: Nginx k8s yaml files are at gitlab repo.</p>
+<h2 id="steps">Steps</h2>
+<h3 id="deploy-an-nginx-service-in-cluster">Deploy an NGINX Service In-Cluster</h3>
+<ol>
+<li><strong>Prepare Helm NGINX Repo</strong>
+<ul>
+<li>Add it on GitLab project.</li>
+</ul>
+</li>
+<li><strong>Prepare GitLab Token</strong>
+<ul>
+<li>Create it on Gitlab project.</li>
+</ul>
+</li>
+<li><strong>Create a New App in ArgoCD</strong>
+<ul>
+<li>Use the specified repo, path, and target revision.
+<ul>
+<li>In ArgoCD:</li>
+<li>REPO URL: <code>https://oauth2:&lt;your_token&gt;@gitlab.com/leadtek/argo-example-apps.git</code></li>
+<li>PATH: <code>helm-nginx</code></li>
+<li>TARGET REVISION: <code>argo-nginx</code> (branch in GitLab)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Check Deployed Resources</strong>
+<ul>
+<li>Verify that the NGINX service has been deployed correctly.</li>
+</ul>
+</li>
+</ol>
+<h3 id="check-auto-sync">Check Auto Sync</h3>
+<ol>
+<li>
+<p><strong>Change NGINX Pod Image Tag</strong></p>
+<ul>
+<li>Downgrade or upgrade the image tag in the Helm chart.</li>
+</ul>
+</li>
+<li>
+<p><strong>Check Resources</strong></p>
+<ul>
+<li>Verify that the changes are automatically synced and applied to the NGINX pod.</li>
+</ul>
+</li>
+</ol>
+<h3 id="add-a-new-kubernetes-cluster">Add a New Kubernetes Cluster</h3>
+<ol>
+<li>
+<p><strong>Update Kubeconfig</strong></p>
+<ul>
+<li>Add a new cluster in <code>$HOME/.kube/config</code>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">clusters</span>:
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">cluster</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">certificate-authority-data</span>: 
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server</span>: <span style="color:#ae81ff">https://10.1.5.201:6443</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-new-k8s</span>
+</span></span></code></pre></div><strong>ps:</strong> You can find <code>certificate-authority-data</code> and <code>server</code> info at 10.1.5.201 at path  <code>$HOME/.kube/config</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Add a New User</strong></p>
+<ul>
+<li>Include the user configuration:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">users</span>:
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kubernetes-admin_my_new_k8s</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">user</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">client-certificate-data</span>: 
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">client-key-data</span>: 
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
+</span></span></code></pre></div><strong>ps:</strong> You can find <code>client-certificate-data</code> and <code>client-key-data</code> info at 10.1.5.201 at path <code>$HOME/.kube/config</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Add a New Context</strong></p>
+<ul>
+<li>Add the context for the new cluster:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">contexts</span>: 
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">context</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">cluster</span>: <span style="color:#ae81ff">my-new-k8s</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">user</span>: <span style="color:#ae81ff">kubernetes-admin_my_new_k8s</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kubernetes-admin@cluster.my-new-k8s</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Verify the Contexts</strong></p>
+<ul>
+<li>Run the following command to list contexts:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl config get-contexts
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Create Directory in the ArgoCD Pod</strong></p>
+<ul>
+<li>Execute these commands:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl exec -it argocd-server-6b477b574d-bf4lz -n argocd bash
+</span></span><span style="display:flex;"><span>mkdir -p /home/argocd/.kube
+</span></span><span style="display:flex;"><span>exit
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Copy the Kubeconfig File</strong></p>
+<ul>
+<li>Execute the following commands:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl config view --raw &gt; /tmp/config
+</span></span><span style="display:flex;"><span>kubectl cp /tmp/config argocd-server-6b477b574d-bf4lz:/home/argocd/.kube/config -n argocd
+</span></span><span style="display:flex;"><span>kubectl exec -it argocd-server-6b477b574d-bf4lz -n argocd -- cat /home/argocd/.kube/config
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Add the Cluster to ArgoCD</strong></p>
+<ul>
+<li>Use the following command:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>argocd cluster add kubernetes-admin@cluster.my-new-k8s
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h3 id="deploy-a-nginx-service-in-another-kubernetes-cluster">Deploy a NGINX Service in Another Kubernetes Cluster</h3>
+<ul>
+<li>Follow the same steps as &ldquo;Deploy an NGINX Service In-Cluster&rdquo;, but replace <code>in-cluster</code> with <code>kubernetes-admin@cluster.my-new-k8s</code>.</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://argo-cd.readthedocs.io/en/stable/">Doc</a></li>
+<li><a href="https://github.com/argoproj/argo-cd/blob/master/docs/faq.md#i-forgot-the-admin-password-how-do-i-reset-it">I forgot the admin password, how do I reset it?</a></li>
+<li><a href="https://argo-cd.readthedocs.io/en/stable/user-guide/private-repositories/">Argo - Private Repositories</a></li>
+<li><a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-management/#adding-a-cluster">Argo - Adding cluster</a></li>
+<li><a href="https://www.youtube.com/watch?v=El7zRS5w0dc">How to add External Cluster to ArgoCD | ArgoCD Tutorial</a></li>
+<li><a href="https://joehuang-pop.github.io/2020/10/04/K8S-kubectx%E5%A4%9A%E5%8F%A2%E9%9B%86%E9%96%93%E5%88%87%E6%8F%9B%E8%87%AA%E5%A6%82-A-tool-to-switch-between-K8s-contexts/">[K8S] kubectx多叢集間切換自如 | A tool to switch between K8s contexts</a></li>
+</ul></div>
+    <div class="post__footer">
+      
+
+      
+        <span><a class="tag" href="/tags/cicd/">cicd</a></span>
+
+
+      
+    </div>
+
+    <div id="comment">
+          <h2>comments</h2>
+          <div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+        </div>
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>
+
+<script src="https://unpkg.com/mermaid@8.13.4/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>

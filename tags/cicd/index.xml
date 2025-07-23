@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cicd on </title>
+    <link>https://microfish31.github.io/tags/cicd/</link>
+    <description>Recent content in Cicd on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2024-{{ YEAR }}</copyright>
+    <lastBuildDate>Fri, 09 Aug 2024 06:17:17 +0000</lastBuildDate><atom:link href="https://microfish31.github.io/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argo</title>
+      <link>https://microfish31.github.io/post/cicd-argo/</link>
+      <pubDate>Fri, 09 Aug 2024 06:17:17 +0000</pubDate>
+      
+      <guid>https://microfish31.github.io/post/cicd-argo/</guid>
+      
+        <description>&lt;p&gt;Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Sonarqube</title>
+      <link>https://microfish31.github.io/post/cicd-sonarqube/</link>
+      <pubDate>Wed, 07 Aug 2024 09:44:05 +0000</pubDate>
+      
+      <guid>https://microfish31.github.io/post/cicd-sonarqube/</guid>
+      
+        <description>&lt;p&gt;SonarQube shows application health and highlights newly introduced issues.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Gitops</title>
+      <link>https://microfish31.github.io/post/cicd-gitops/</link>
+      <pubDate>Tue, 06 Aug 2024 01:58:27 +0000</pubDate>
+      
+      <guid>https://microfish31.github.io/post/cicd-gitops/</guid>
+      
+        <description>&lt;p&gt;GitOps leverages Git repositories for managing and automating deployments.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

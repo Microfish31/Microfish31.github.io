@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <title>
+    Microfish
+        |
+        Sonarqube
+      
+
+    
+
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.123.7"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Microfish" />
+  <meta
+    name="description"
+    content="Love travel , love writing."
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.26d8396ded3f4aa47cc8d77a9fcb09fee1d20d223c6b3f074a21c7e217bc8c6d.css"
+      integrity="sha256-Jtg5be0/SqR8yNd6n8sJ/uHSDSI8az8HSiHH4he8jG0="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.7d272de35b410fb165377550cdf9c4d3a80fbbcc961e111914e4d5c0eaf5729f.css"
+    integrity="sha256-fSct41tBD7FlN3VQzfnE06gPu8yWHhEZFOTVwOr1cp8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.55d8333481b07a08e07cf6f37319753a2b47e99f4c395394c5747b48b495aa9b.css"
+    integrity="sha256-VdgzNIGwegjgfPbzcxl1OitH6Z9MOVOUxXR7SLSVqps="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a7448d02590b43449364b6b5922ed9af5410abb4de4238412a830316dedb850b.css"
+    integrity="sha256-p0SNAlkLQ0STZLa1ki7Zr1QQq7TeQjhBKoMDFt7bhQs="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.9ed75a5d670c953fe4df935937674b4646f92674367e9e66eb995bb04e821647.css"
+    integrity="sha256-ntdaXWcMlT/k35NZN2dLRkb5JnQ2fp5m65lbsE6CFkc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://microfish31.github.io/post/cicd-sonarqube/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.d6d329d93844b162e8bed1e915619625ca91687952177552b9b3e211014a2957.js"
+      integrity="sha256-1tMp2ThEsWLovtHpFWGWJcqRaHlSF3VSubPiEQFKKVc="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Sonarqube"/>
+<meta name="twitter:description" content="SonarQube shows application health and highlights newly introduced issues."/>
+
+
+
+  
+  <meta property="og:title" content="Sonarqube" />
+<meta property="og:description" content="SonarQube shows application health and highlights newly introduced issues." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://microfish31.github.io/post/cicd-sonarqube/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-08-07T09:44:05+00:00" />
+<meta property="article:modified_time" content="2024-08-07T09:44:05+00:00" /><meta property="og:site_name" content="Microfish" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Sonarqube",
+        "headline": "Sonarqube",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003eSonarQube shows application health and highlights newly introduced issues.\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "inLanguage": "en",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/microfish31.github.io\/post\/cicd-sonarqube\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Microfish"
+        },
+        "copyrightYear" : "2024",
+        "dateCreated": "2024-08-07T09:44:05.00Z",
+        "datePublished": "2024-08-07T09:44:05.00Z",
+        "dateModified": "2024-08-07T09:44:05.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Microfish",
+            "url": "https://microfish31.github.io/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/microfish31.github.io\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "https:\/\/microfish31.github.io\/post\/cicd-sonarqube\/",
+        "wordCount" : "415",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "cicd"
+
+    ]
+    }
+  </script>
+
+
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="https://avatars.githubusercontent.com/u/75024370?v=4"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Microfish</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Love travel , love writing.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/post/"
+              
+              title=""
+              >Posts</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/portfolio/"
+              
+              title=""
+              >Portfolio</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/contact/"
+              
+              title=""
+              >Contact</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      <h1>Sonarqube</h1>
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  Wed, Aug 7, 2024
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">2-minute read</span>
+          </li>
+        </ul>
+      <p>SonarQube shows application health and highlights newly introduced issues.</p>
+<h3 id="sonarqube">SonarQube</h3>
+<p>SonarQube is an on-premise analysis tool designed to detect coding issues in 30+ languages, frameworks, and IaC platforms.</p>
+<h3 id="supported-language-20240809">Supported Language (20240809)</h3>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th><strong>Community Edition</strong></th>
+<th><strong>Developer Edition</strong></th>
+<th><strong>Enterprise and Data Center Editions</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java</td>
+<td>All languages in Community Edition plus&hellip;</td>
+<td>All languages in Developer Edition plus&hellip;</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>C</td>
+<td>APEX</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>C++</td>
+<td>COBOL</td>
+</tr>
+<tr>
+<td>TypeScript</td>
+<td>Obj-C</td>
+<td>JCL</td>
+</tr>
+<tr>
+<td>Kotlin</td>
+<td>Swift</td>
+<td>PL/I</td>
+</tr>
+<tr>
+<td>CloudFormation</td>
+<td>ABAP</td>
+<td>RPG</td>
+</tr>
+<tr>
+<td>Terraform</td>
+<td>T-SQL</td>
+<td>VB6</td>
+</tr>
+<tr>
+<td>Docker</td>
+<td>PL/SQL</td>
+<td></td>
+</tr>
+<tr>
+<td>Kubernetes</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Helm Charts</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Go</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Scala</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Flex</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Python</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PHP</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>HTML</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CSS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>XML</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>VB.NET</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Azure Resource Manager</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="rules">Rules</h3>
+<p><a href="https://rules.sonarsource.com/">https://rules.sonarsource.com/</a></p>
+<h3 id="todo">TODO</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Install SornarQube in k8s (helm chart,community edition v10.6)</li>
+<li><input checked="" disabled="" type="checkbox"> Install Gitlab-runner in k8s (check status)</li>
+<li><input checked="" disabled="" type="checkbox"> Write sonar-project.properties for terraform repo</li>
+<li><input checked="" disabled="" type="checkbox"> Rewrite terraform .gitlab-ci.yml</li>
+<li><input checked="" disabled="" type="checkbox"> Check CI Pipeline Status</li>
+</ul>
+<h3 id="event-flow">Event Flow</h3>
+<figure><img src="/images/cicd/flow_sonarqube.svg"
+         alt="image"/><figcaption>
+            <p>SonarQube in CI Flow</p>
+        </figcaption>
+</figure>
+
+<h3 id="installation">Installation</h3>
+<ul>
+<li>Docker</li>
+<li>K8s
+<pre tabindex="0"><code>helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
+helm repo update
+helm install sonarqube sonarqube/sonarqube \
+  --namespace sonarqube \
+  --set ingress-nginx.enabled=false \
+  --set postgresql.enabled=true \
+  --set initSysctl.enabled=true \
+  --set initFs.enabled=true \
+  --set service.type=NodePort
+</code></pre></li>
+</ul>
+<h3 id="server">Server</h3>
+<p>SonarQube
+http://10.1.5.201:32275/<br>
+admin | admin<br>
+ubuntu | ubuntu</p>
+<h3 id="scanner-cli">Scanner-CLI</h3>
+<ul>
+<li>Install
+<pre tabindex="0"><code>wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.1.0.4477-linux-x64.zip
+unzip sonar-scanner-cli-6.1.0.4477-linux-x64.zip
+</code></pre></li>
+<li>Add cmd path
+<pre tabindex="0"><code>sudo mv sonar-scanner-6.1.0.4477-linux-x64 /usr/local/sonar-scanner
+sudo ln -s /usr/local/sonar-scanner/bin/sonar-scanner /usr/local/bin/sonar-scanner
+</code></pre></li>
+<li>Check
+<pre tabindex="0"><code>sonar-scanner --version
+</code></pre></li>
+</ul>
+<h3 id="run-scanner-in-repo">Run scanner in repo</h3>
+<ul>
+<li>Create sonar-project.properties
+<pre tabindex="0"><code>sonar.projectKey=&lt;projectKey from sonarqube when creating project&gt;
+sonar.qualitygate.wait=true
+sonar.projectVersion=1.0
+sonar.sources=.
+sonar.language=terraform
+sonar.host.url=http://10.1.5.201:32275
+sonar.login=&lt;login token from sonarqube when creating project&gt;
+</code></pre></li>
+<li>Run
+<pre tabindex="0"><code>sonar-scanner
+</code></pre></li>
+</ul>
+<h3 id="integrate-with-gitlabci">Integrate with gitlabci</h3>
+<ul>
+<li><a href="https://docs.sonarsource.com/sonarqube/latest/devops-platform-integration/gitlab-integration/">GitLab integration</a></li>
+</ul>
+<h3 id="gitlab-runner">Gitlab Runner</h3>
+<ul>
+<li>Get values.yaml
+<pre tabindex="0"><code>helm show values gitlab/gitlab-runner &gt; values_gitlab-runner.yaml
+</code></pre></li>
+<li>Get all helm Chart
+<pre tabindex="0"><code>helm pull gitlab/gitlab-runner --untar
+</code></pre></li>
+<li>Create namespace
+<pre tabindex="0"><code>kubectl create ns gitlab
+</code></pre></li>
+<li>Change
+helm chart values.yaml
+<pre tabindex="0"><code>gitlabUrl: https://gitlab.com/
+runnerRegistrationToken: &#34;&lt;your runner registed token from gitlab&gt;&#34;
+checkInterval: 30
+</code></pre></li>
+<li>Create for rbac
+gitlab-rbac.yaml
+<pre tabindex="0"><code>apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: gitlab-runner-cluster-role
+rules:
+  - apiGroups: [&#34;&#34;]
+    resources: [&#34;pods&#34;, &#34;pods/logs&#34;, &#34;pods/exec&#34;, &#34;pods/attach&#34;]
+    verbs: [&#34;get&#34;, &#34;list&#34;, &#34;watch&#34;, &#34;create&#34;, &#34;update&#34;, &#34;delete&#34;, &#34;patch&#34;]
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: gitlab-runner-cluster-role-binding
+subjects:
+  - kind: ServiceAccount
+    name: default
+    namespace: gitlab
+roleRef:
+  kind: ClusterRole
+  name: gitlab-runner-cluster-role
+  apiGroup: rbac.authorization.k8s.io
+</code></pre><pre tabindex="0"><code> kubectl apply -f gitlab-rbac.yaml
+</code></pre></li>
+<li>Create gitlab runner in k8s
+<pre tabindex="0"><code>helm install gitlab-runner gitlab/gitlab-runner  -ngitlab -f values_gitlab-runner.yaml
+</code></pre></li>
+</ul>
+<h3 id="gitlab-ci">Gitlab CI</h3>
+<p>Take terraform for example</p>
+<pre tabindex="0"><code>stages:
+  - format
+  - validate
+  - sonarqube-check
+
+format-job:
+  stage: format
+  image: 
+    name: hashicorp/terraform:1.9
+    entrypoint: [&#34;&#34;]
+  script:
+    - terraform fmt
+
+validate-job:
+  stage: validate
+  image: 
+    name: hashicorp/terraform:1.9
+    entrypoint: [&#34;&#34;]
+  script:
+    - terraform init
+    - terraform validate
+
+sonarqube-check:
+  stage: sonarqube-check
+  image: 
+    name: sonarsource/sonar-scanner-cli:11.0
+    entrypoint: [&#34;&#34;]
+  script:
+    - sonar-scanner
+</code></pre><h3 id="conclusion">Conclusion</h3>
+<ol>
+<li>透過 SonarQube 除了可以使用其原生提供的檢查機制之外，還可以整合 tflint or golangci-lint 的報告 (需先產生報告，接著 sonar-scanner 會吃此檔案)</li>
+<li>SonarQube 優質的 UI 可以讓開發者好追蹤 Code 問題</li>
+<li>將 sonar-scanner 的失敗回傳，可以使 gitlab ci pipeline 停止 (需確認)</li>
+</ol>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://www.sonarsource.com/products/sonarqube/">SonarQube</a></li>
+<li><a href="https://docs.sonarsource.com/sonarqube/latest/?_gl=1*1adgop8*_gcl_aw*R0NMLjE3MjMxNjg3NTEuQ2p3S0NBancyZEcxQmhCNEVpd0E5OThjcU1wSkh3M1p1RjdtQXNBbG1oRk16ODMwZ1FuMENvczg4a3FVZ1V0SnBqeThrZ3ltbnE3Z21Cb0NfT1FRQXZEX0J3RQ..*_gcl_au*MTA2MTE2OTgwOS4xNzIxNjk2NDU5*_up*MQ..*_ga*MjA0NTI1OTg5NC4xNzIxNjk2NDU5*_ga_9JZ0GZ5TC6*MTcyMzE2NjY2NS41LjEuMTcyMzE2OTc2My42MC4wLjA.&amp;gclid=CjwKCAjw2dG1BhB4EiwA998cqMpJHw3ZuF7mAsAlmhFMz830gQn0Cos88kqUgUtJpjy8kgymnq7gmBoC_OQQAvD_BwE">What is SonarQube?</a></li>
+<li><a href="https://www.youtube.com/watch?v=XX0ey4rRvms">Youtube - GitLab Integration | Mapping your organization into SonarQube</a></li>
+</ul></div>
+    <div class="post__footer">
+      
+
+      
+        <span><a class="tag" href="/tags/cicd/">cicd</a></span>
+
+
+      
+    </div>
+
+    <div id="comment">
+          <h2>comments</h2>
+          <div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<noscript>Please enable JavaScript to load the comments.</noscript>
+
+        </div>
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Microfish
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.1248fa75275e5ef0cbef27e8c1e27dc507c445ae3a2c7d2ed0be0809555dac64.js"
+    integrity="sha256-Ekj6dSdeXvDL7yfoweJ9xQfERa46LH0u0L4ICVVdrGQ="
+    crossorigin="anonymous"
+  ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR&#43;zwDAROtph0PXGte6ia8heboACF9R5l/DiY&#43;WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous" /><script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8&#43;w2LAIftJEULZABrF9PPFv&#43;tVkH" crossorigin="anonymous"></script><script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js"
+      integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB&#43;w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v"
+      crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"
+    ></script></body>
+</html>
+
+<script src="https://unpkg.com/mermaid@8.13.4/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true });
+</script>

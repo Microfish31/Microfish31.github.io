@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chartting on </title>
+    <link>http://localhost:1313/tags/chartting/</link>
+    <description>Recent content in Chartting on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2024-{{ YEAR }}</copyright>
+    <lastBuildDate>Sun, 12 May 2024 14:34:39 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/chartting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>聊聊懂電腦這件事</title>
+      <link>http://localhost:1313/post/chartting-%E8%81%8A%E8%81%8A%E6%87%82%E9%9B%BB%E8%85%A6%E9%80%99%E4%BB%B6%E4%BA%8B/</link>
+      <pubDate>Sun, 12 May 2024 14:34:39 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/chartting-%E8%81%8A%E8%81%8A%E6%87%82%E9%9B%BB%E8%85%A6%E9%80%99%E4%BB%B6%E4%BA%8B/</guid>
+      
+        <description>世界運行 : 規則 打破規則 ?
+去理解社會規則 勞保 勞退 健保 RSU &amp;hellip;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
