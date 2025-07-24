@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>2024-{{ YEAR }}</copyright>
-    <lastBuildDate>Wed, 04 Sep 2024 14:42:28 +0800</lastBuildDate><atom:link href="https://microfish31.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jun 2025 20:25:28 +0800</lastBuildDate><atom:link href="https://microfish31.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>環境建置</title>
+      <link>https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/</link>
+      <pubDate>Mon, 30 Jun 2025 20:25:28 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/</guid>
+      
+        <description>&lt;p&gt;Build AI development env for learning.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Federated learning</title>
       <link>https://microfish31.github.io/post/ai-federated-learning/</link>
@@ -93,17 +104,6 @@
       <guid>https://microfish31.github.io/post/ai-lenet-5-paper-study/</guid>
       
         <description>&lt;p&gt;Study for paper &amp;ldquo;Gradient Based Learning Applied to Document Recognition&amp;rdquo;.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>環境建置</title>
-      <link>https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/</link>
-      <pubDate>Sun, 11 Feb 2024 20:25:28 +0800</pubDate>
-      
-      <guid>https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/</guid>
-      
-        <description>&lt;p&gt;Build AI development env for learning.&lt;/p&gt;</description>
       
     </item>
     

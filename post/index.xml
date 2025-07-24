@@ -7,7 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>2024-{{ YEAR }}</copyright>
-    <lastBuildDate>Sun, 17 Nov 2024 14:55:24 +0800</lastBuildDate><atom:link href="https://microfish31.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jul 2025 14:14:23 +0800</lastBuildDate><atom:link href="https://microfish31.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OKINAWA</title>
+      <link>https://microfish31.github.io/post/2025-%E6%B2%96%E7%B9%A9-okinawa/</link>
+      <pubDate>Thu, 24 Jul 2025 14:14:23 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/2025-%E6%B2%96%E7%B9%A9-okinawa/</guid>
+      
+        <description>&lt;p&gt;OKINAWA YA!&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>環境建置</title>
+      <link>https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/</link>
+      <pubDate>Mon, 30 Jun 2025 20:25:28 +0800</pubDate>
+      
+      <guid>https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/</guid>
+      
+        <description>&lt;p&gt;Build AI development env for learning.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Federated learning</title>
       <link>https://microfish31.github.io/post/ai-federated-learning/</link>
@@ -203,17 +225,6 @@
       <guid>https://microfish31.github.io/post/%E5%BF%83%E9%9D%88%E6%88%90%E9%95%B7-%E4%BF%AE%E8%BA%AB/</guid>
       
         <description>&lt;p&gt;Seek the cause in oneself.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>環境建置</title>
-      <link>https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/</link>
-      <pubDate>Sun, 11 Feb 2024 20:25:28 +0800</pubDate>
-      
-      <guid>https://microfish31.github.io/post/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE/</guid>
-      
-        <description>&lt;p&gt;Build AI development env for learning.&lt;/p&gt;</description>
       
     </item>
     
