@@ -192,7 +192,7 @@
 
     ,
         "url" : "https:\/\/microfish31.github.io\/post\/ai-%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE\/",
-        "wordCount" : "1375",
+        "wordCount" : "1386",
         "genre" : [ ],
         "keywords" : [ 
       
@@ -397,55 +397,57 @@
           </li>
         </ul>
       <p>Build AI development env for learning.</p>
-<p>This note is about enabling GPU support in Docker and connecting to the container via SSH.<br>
-The setup uses CUDA 11.7 and PyTorch 2.0, includes configuring SSH services, setting up NVIDIA drivers, and a test script to verify if PyTorch and the GPU are working correctly.</p>
+<div
+  class="notice"
+>
+  <span
+    class="notice__title"
+  ></span><div class="notice__content">
+    This note is about enabling GPU support in Docker and connecting to the container via SSH.<br>
+The setup uses CUDA 11.7 and PyTorch 2.0, includes configuring SSH services, setting up NVIDIA drivers, and a test script to verify if PyTorch and the GPU are working correctly.
+  </div>
+</div>
 <p>Updated: (this is better.)<br>
 <a href="https://github.com/Microfish31/ai-env">https://github.com/Microfish31/ai-env</a></p>
 <h2 id="install-docker-ce-and-docker-client">Install docker-ce and docker client</h2>
 <ul>
-<li>
-<p>docker-ce</p>
+<li>docker-ce
 <pre tabindex="0"><code class="language-bash!" data-lang="bash!">sudo apt-get update
-
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
-
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
 sudo add-apt-repository &#34;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&#34;
-
 apt-cache policy docker-ce
-
 sudo apt install docker-ce
 </code></pre></li>
-<li>
-<p>docker client<br>
-When you install Docker CE, the Docker client tools are automatically installed.</p>
-</li>
-<li>
-<p>Decker Desktop (or this)<br>
-<a href="https://docs.docker.com/desktop/gpu/">https://docs.docker.com/desktop/gpu/</a></p>
-</li>
-<li>
-<p>Configuration<br>
-This command sequence creates a <code>docker</code> group, adds the current user to the group, and refreshes the session to allow the user to run Docker commands without <code>sudo</code> immediately.</p>
+<li>docker client<br>
+When you install Docker CE, the Docker client tools are automatically installed.</li>
+<li>Configuration<br>
+This command sequence creates a <code>docker</code> group, adds the current user to the group, and refreshes the session to allow the user to run Docker commands without <code>sudo</code> immediately.
 <pre tabindex="0"><code class="language-bash!" data-lang="bash!">sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 </code></pre></li>
+<li>Decker Desktop (or this)<br>
+<a href="https://docs.docker.com/desktop/gpu/">https://docs.docker.com/desktop/gpu/</a></li>
 </ul>
 <h2 id="setting-up-nvidia-drivers-and-docker-container-toolkit">Setting Up NVIDIA Drivers and Docker Container Toolkit</h2>
-<p>To enable GPU usage in the Docker container, install the NVIDIA Container Toolkit:</p>
+<ol>
+<li>To enable GPU usage in the Docker container, install the NVIDIA Container Toolkit:
 <pre tabindex="0"><code class="language-bash!" data-lang="bash!">curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
 &amp;&amp; curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | sed &#39;s#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g&#39; | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list \
 &amp;&amp; sudo apt-get update
-</code></pre><p>Install the NVIDIA Container Toolkit and restart Docker:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install nvidia-container-toolkit
-</span></span><span style="display:flex;"><span>sudo nvidia-ctk runtime configure --runtime<span style="color:#f92672">=</span>docker
-</span></span><span style="display:flex;"><span>sudo systemctl restart docker
-</span></span></code></pre></div><h2 id="creating-the-dockerfile">Creating the Dockerfile</h2>
+</code></pre></li>
+<li>Install the NVIDIA Container Toolkit and restart Docker:
+<pre tabindex="0"><code class="language-bash!" data-lang="bash!">sudo apt install nvidia-container-toolkit
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+</code></pre></li>
+</ol>
+<h2 id="creating-the-dockerfile">Creating the Dockerfile</h2>
 <p>We will use the official PyTorch CUDA 11.7 container image and install OpenSSH for remote access.</p>
-<p>Create file name as <code>dockerfile</code> in current path.
-And paste the content below:</p>
+<ul>
+<li>Create file name as <code>dockerfile</code> in current path.
+And paste the content below:
 <pre tabindex="0"><code class="language-Dockerfile!" data-lang="Dockerfile!">FROM pytorch/pytorch:2.0.0-cuda11.7-cudnn8-runtime
 
 # Set the environment variable
@@ -474,34 +476,30 @@ VOLUME [&#34;/home/ubuntu/ai:/workspace&#34;]
 
 # Start SSH service and add env path
 CMD [&#34;sh&#34;, &#34;-c&#34;, &#34;echo &#39;export PATH=\&#34;/opt/conda/bin:$PATH\&#34;&#39; &gt;&gt; ~/.bashrc &amp;&amp; . ~/.bashrc &amp;&amp; /usr/sbin/sshd -D&#34;]
-</code></pre><h2 id="building-and-running-the-docker-container">Building and Running the Docker Container</h2>
+</code></pre></li>
+</ul>
+<h2 id="building-and-running-the-docker-container">Building and Running the Docker Container</h2>
 <ol>
-<li>
-<p>Pull the PyTorch container image from Docker Hub:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull pytorch/pytorch:2.0.0-cuda11.7-cudnn8-runtime
-</span></span></code></pre></div></li>
-<li>
-<p>Build the Docker image from the Dockerfile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t cuda11.7-ssh-jupyter .
-</span></span></code></pre></div></li>
-<li>
-<p>Run the Docker container with GPU support and SSH enabled:</p>
+<li>Pull the PyTorch container image from Docker Hub:
+<pre tabindex="0"><code class="language-bash!" data-lang="bash!">docker pull pytorch/pytorch:2.0.0-cuda11.7-cudnn8-runtime
+</code></pre></li>
+<li>Build the Docker image from the Dockerfile:
+<pre tabindex="0"><code class="language-bash!" data-lang="bash!">docker build -t cuda11.7-ssh-jupyter .
+</code></pre></li>
+<li>Run the Docker container with GPU support and SSH enabled:
 <pre tabindex="0"><code class="language-bash!" data-lang="bash!">docker run --name my-ai-env --gpus all -p 3131:22 -p 8888:8888 -w /workspace -d cuda11.7-ssh-jupyter
 </code></pre></li>
-<li>
-<p>Connect to the container via SSH (replace the IP address as necessary):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh root@&lt;container-IP-address&gt; -p3131
-</span></span><span style="display:flex;"><span>root
-</span></span></code></pre></div><p>ps: You can find the ip by using <code>ifconfig</code>.</p>
-</li>
+<li>Connect to the container via SSH (replace the IP address as necessary):
+<pre tabindex="0"><code class="language-bash!" data-lang="bash!">ssh root@&lt;container-IP-address&gt; -p3131
+root
+</code></pre>ps: You can find the ip by using <code>ifconfig</code>.</li>
 </ol>
-<h2 id="verifying">Verifying</h2>
-<h3 id="verify-your-gpu-in-a-new-container">Verify your gpu in a new container</h3>
+<h2 id="verify-your-gpu-in-a-new-container">Verify your gpu in a new container</h2>
 <pre tabindex="0"><code class="language-bash!" data-lang="bash!">docker run --rm --gpus all nvidia/cuda:11.7.1-base-ubuntu20.04 nvidia-smi
-</code></pre><h3 id="verify-jupyter">Verify Jupyter</h3>
+</code></pre><h2 id="verify-jupyter">Verify Jupyter</h2>
 <pre tabindex="0"><code class="language-bash!" data-lang="bash!">jupyter server --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token=&#39;&#39;
 </code></pre><p>visit http://172.31.230.225:8888/lab in chrome browser</p>
-<h3 id="verify-gpu-with-pytorch">Verify GPU with PyTorch</h3>
+<h2 id="verify-gpu-with-pytorch">Verify GPU with PyTorch</h2>
 <p>You can run the following Python script to verify that PyTorch is correctly installed and that the GPU is available:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> torch
 </span></span><span style="display:flex;"><span>
@@ -533,56 +531,63 @@ CMD [&#34;sh&#34;, &#34;-c&#34;, &#34;echo &#39;export PATH=\&#34;/opt/conda/bin
 </ul>
 <h2 id="setting-the-container-path-moved-to-dockerfile">Setting the Container Path (moved to dockerfile)</h2>
 <p>Since SSH-ing into a container does not initialize the environment as expected, we need to manually add the Anaconda path to ensure that Python packages are accessible.</p>
-<p>To add the Anaconda path to the container, execute the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;export PATH=&#34;/opt/conda/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
-</span></span><span style="display:flex;"><span>source ~/.bashrc
-</span></span></code></pre></div><h2 id="config-for-containerd">config for containerd</h2>
-<p>path: <code>/etc/containerd/config.toml</code></p>
+<ul>
+<li>To add the Anaconda path to the container, execute the following command:
+<pre tabindex="0"><code class="language-bash!" data-lang="bash!">echo &#39;export PATH=&#34;/opt/conda/bin:$PATH&#34;&#39; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre></li>
+</ul>
+<h2 id="config-for-containerd">config for containerd</h2>
+<ol>
+<li>path: <code>/etc/containerd/config.toml</code>
 <pre tabindex="0"><code class="language-toml!" data-lang="toml!">version = 2
 
 [plugins]
-  [plugins.&#34;io.containerd.runtime.v1.linux&#34;]
+[plugins.&#34;io.containerd.runtime.v1.linux&#34;]
     shim_debug = true
 
-  [plugins.&#34;io.containerd.grpc.v1.cri&#34;]
+[plugins.&#34;io.containerd.grpc.v1.cri&#34;]
     [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd]
-      default_runtime_name = &#34;runc&#34;
-      [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.runtimes]
+    default_runtime_name = &#34;runc&#34;
+    [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.runtimes]
         [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.runtimes.runc]
-          runtime_type = &#34;io.containerd.runc.v2&#34;
+        runtime_type = &#34;io.containerd.runc.v2&#34;
         [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.runtimes.nvidia]
-          runtime_type = &#34;io.containerd.runc.v2&#34;
-          [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.runtimes.nvidia.options]
+        runtime_type = &#34;io.containerd.runc.v2&#34;
+        [plugins.&#34;io.containerd.grpc.v1.cri&#34;.containerd.runtimes.nvidia.options]
             BinaryName = &#34;/usr/bin/nvidia-container-runtime&#34;
 
 [debug]
-  level = &#34;info&#34;
+level = &#34;info&#34;
 
 [metrics]
-  address = &#34;127.0.0.1:1338&#34;
-  grpc_histogram = false
+address = &#34;127.0.0.1:1338&#34;
+grpc_histogram = false
 
 [grpc]
-  address = &#34;/run/containerd/containerd.sock&#34;
-  uid = 0
-  gid = 0
+address = &#34;/run/containerd/containerd.sock&#34;
+uid = 0
+gid = 0
 
 [timeouts]
-  task_shutdown = &#34;15s&#34;
+task_shutdown = &#34;15s&#34;
 
 [ttrpc]
-  address = &#34;&#34;
+address = &#34;&#34;
 
 [proxy_plugins]
-  [proxy_plugins.&#34;snapshot-overlayfs&#34;]
+[proxy_plugins.&#34;snapshot-overlayfs&#34;]
     type = &#34;snapshot&#34;
     address = &#34;/run/containerd/snapshotter-overlayfs.sock&#34;
 
 [plugins.&#34;io.containerd.snapshotter.v1.overlayfs&#34;]
-  root_path = &#34;/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs&#34;
-</code></pre><p>After config , restart the containerd service</p>
+root_path = &#34;/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs&#34;
+</code></pre></li>
+<li>After config , restart the containerd service
 <pre tabindex="0"><code class="language-bash!" data-lang="bash!">sudo systemctl restart containerd
-</code></pre><h2 id="next---reduce-image-size">Next -&gt; Reduce image size</h2>
+</code></pre></li>
+</ol>
+<h2 id="next---reduce-image-size">Next -&gt; Reduce image size</h2>
 <p>Build image form nvidia-cuda</p>
 <ul>
 <li>pytorch</li>
@@ -593,14 +598,20 @@ CMD [&#34;sh&#34;, &#34;-c&#34;, &#34;echo &#39;export PATH=\&#34;/opt/conda/bin
 <p><a href="https://hub.docker.com/r/nvidia/cuda">https://hub.docker.com/r/nvidia/cuda</a>
 <a href="https://pytorch.org/">https://pytorch.org/</a></p>
 <h2 id="docker-add-user">Docker add user</h2>
+<ol>
+<li>Write in Dockerfile
 <pre tabindex="0"><code class="language-bash!" data-lang="bash!">FROM python:3.10-slim
 
 ARG UID=1001
 RUN useradd -u $UID -m appuser
 USER appuser
-</code></pre><pre tabindex="0"><code>docker build --build-arg UID=$(id -u) -t myimage .
-</code></pre><h2 id="wifi-settings">Wifi Settings</h2>
-<pre tabindex="0"><code class="language-!" data-lang="!"># 建立一個新的連線設定
+</code></pre></li>
+<li>Pass user id into Dockerfile
+<pre tabindex="0"><code class="language-bash!" data-lang="bash!">docker build --build-arg UID=$(id -u) -t myimage .
+</code></pre></li>
+</ol>
+<h2 id="wifi-settings">Wifi Settings</h2>
+<pre tabindex="0"><code class="language-bash!" data-lang="bash!"># 建立一個新的連線設定
 sudo nmcli connection add type wifi ifname wlx00ad244780e7 con-name &#34;LIN-static&#34; ssid &#34;LIN&#34;
 
 # 設定密碼與加密方式
@@ -673,13 +684,13 @@ Section &#34;Screen&#34;
 EndSection
 EOF
 </code></pre><h2 id="vpn">VPN</h2>
-<p>tailscale free tier<br>
-Limited to 3 users<br>
-100 devices<br>
-Access nearly all of Tailscale’s features<br>
-Use Tailscale for free, indefinitely<br>
-Add-on devices for $0.50 each per month<br>
-<a href="https://tailscale.com/">https://tailscale.com/</a></p>
+<p>Tailscale Free Tier Summary:
+Free to use, indefinitely
+Up to 3 users
+Up to 100 devices
+Access to nearly all Tailscale features
+Additional devices: $0.50 per device per month
+Official website: <a href="https://tailscale.com/">https://tailscale.com/</a></p>
 <pre tabindex="0"><code class="language-!" data-lang="!">Device A (Client)  ---\
                        +--&gt; Tailscale 控制伺服器（交換資訊、協助穿透 NAT）
 Device B (Client)  ---/
