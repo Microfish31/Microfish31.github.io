@@ -511,78 +511,78 @@
 <p><strong>Update Kubeconfig</strong></p>
 <ul>
 <li>Add a new cluster in <code>$HOME/.kube/config</code>:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">clusters</span>:
-</span></span><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">cluster</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">certificate-authority-data</span>: 
-</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server</span>: <span style="color:#ae81ff">https://10.1.5.201:6443</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-new-k8s</span>
-</span></span></code></pre></div><strong>ps:</strong> You can find <code>certificate-authority-data</code> and <code>server</code> info at 10.1.5.201 at path  <code>$HOME/.kube/config</code>.</li>
+<pre tabindex="0"><code class="language-yaml!" data-lang="yaml!">clusters:
+...
+- cluster:
+    certificate-authority-data: 
+    ...
+    server: https://10.1.5.201:6443
+  name: my-new-k8s
+</code></pre><strong>ps:</strong> You can find <code>certificate-authority-data</code> and <code>server</code> info at 10.1.5.201 at path  <code>$HOME/.kube/config</code>.</li>
 </ul>
 </li>
 <li>
 <p><strong>Add a New User</strong></p>
 <ul>
 <li>Include the user configuration:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">users</span>:
-</span></span><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kubernetes-admin_my_new_k8s</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">user</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">client-certificate-data</span>: 
-</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">client-key-data</span>: 
-</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">...</span>
-</span></span></code></pre></div><strong>ps:</strong> You can find <code>client-certificate-data</code> and <code>client-key-data</code> info at 10.1.5.201 at path <code>$HOME/.kube/config</code>.</li>
+<pre tabindex="0"><code class="language-yaml!" data-lang="yaml!">users:
+...
+- name: kubernetes-admin_my_new_k8s
+  user:
+    client-certificate-data: 
+    ...
+    client-key-data: 
+    ...
+</code></pre><strong>ps:</strong> You can find <code>client-certificate-data</code> and <code>client-key-data</code> info at 10.1.5.201 at path <code>$HOME/.kube/config</code>.</li>
 </ul>
 </li>
 <li>
 <p><strong>Add a New Context</strong></p>
 <ul>
 <li>Add the context for the new cluster:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">contexts</span>: 
-</span></span><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">context</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">cluster</span>: <span style="color:#ae81ff">my-new-k8s</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">user</span>: <span style="color:#ae81ff">kubernetes-admin_my_new_k8s</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">kubernetes-admin@cluster.my-new-k8s</span>
-</span></span></code></pre></div></li>
+<pre tabindex="0"><code class="language-yaml!" data-lang="yaml!">contexts: 
+...
+- context:
+    cluster: my-new-k8s
+    user: kubernetes-admin_my_new_k8s
+  name: kubernetes-admin@cluster.my-new-k8s
+</code></pre></li>
 </ul>
 </li>
 <li>
 <p><strong>Verify the Contexts</strong></p>
 <ul>
 <li>Run the following command to list contexts:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl config get-contexts
-</span></span></code></pre></div></li>
+<pre tabindex="0"><code class="language-bash!" data-lang="bash!">kubectl config get-contexts
+</code></pre></li>
 </ul>
 </li>
 <li>
 <p><strong>Create Directory in the ArgoCD Pod</strong></p>
 <ul>
 <li>Execute these commands:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl exec -it argocd-server-6b477b574d-bf4lz -n argocd bash
-</span></span><span style="display:flex;"><span>mkdir -p /home/argocd/.kube
-</span></span><span style="display:flex;"><span>exit
-</span></span></code></pre></div></li>
+<pre tabindex="0"><code class="language-bash!" data-lang="bash!">kubectl exec -it argocd-server-6b477b574d-bf4lz -n argocd bash
+mkdir -p /home/argocd/.kube
+exit
+</code></pre></li>
 </ul>
 </li>
 <li>
 <p><strong>Copy the Kubeconfig File</strong></p>
 <ul>
 <li>Execute the following commands:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl config view --raw &gt; /tmp/config
-</span></span><span style="display:flex;"><span>kubectl cp /tmp/config argocd-server-6b477b574d-bf4lz:/home/argocd/.kube/config -n argocd
-</span></span><span style="display:flex;"><span>kubectl exec -it argocd-server-6b477b574d-bf4lz -n argocd -- cat /home/argocd/.kube/config
-</span></span></code></pre></div></li>
+<pre tabindex="0"><code class="language-bash!" data-lang="bash!">kubectl config view --raw &gt; /tmp/config
+kubectl cp /tmp/config argocd-server-6b477b574d-bf4lz:/home/argocd/.kube/config -n argocd
+kubectl exec -it argocd-server-6b477b574d-bf4lz -n argocd -- cat /home/argocd/.kube/config
+</code></pre></li>
 </ul>
 </li>
 <li>
 <p><strong>Add the Cluster to ArgoCD</strong></p>
 <ul>
 <li>Use the following command:
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>argocd cluster add kubernetes-admin@cluster.my-new-k8s
-</span></span></code></pre></div></li>
+<pre tabindex="0"><code class="language-bash!" data-lang="bash!">argocd cluster add kubernetes-admin@cluster.my-new-k8s
+</code></pre></li>
 </ul>
 </li>
 </ol>

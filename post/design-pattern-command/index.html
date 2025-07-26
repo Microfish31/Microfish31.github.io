@@ -436,222 +436,219 @@ classDiagram
 <h3 id="implemetation">Implemetation</h3>
 <p>以下將以 golang 實作:</p>
 <ol>
-<li>
-<p>ICommand (命令介面)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// Command interface that all commands will implement
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Command</span> <span style="color:#66d9ef">interface</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Execute</span>()
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></li>
-<li>
-<p>Invoker (命令接收者/請求操作者)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// Invoker that will invoke the command
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">RemoteControl</span> <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">command</span> <span style="color:#a6e22e">Command</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RemoteControl</span>) <span style="color:#a6e22e">AddCommand</span>(<span style="color:#a6e22e">command</span> <span style="color:#a6e22e">Command</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span> = append(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span>, <span style="color:#a6e22e">command</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RemoteControl</span>) <span style="color:#a6e22e">Execute</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">cmd</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cmd</span>.<span style="color:#a6e22e">Execute</span>()
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></li>
-<li>
-<p>Receiver (執行命令/實際操作者)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// Receiver of the command
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Light</span> <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">isOn</span> <span style="color:#66d9ef">bool</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Light</span>) <span style="color:#a6e22e">On</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">isOn</span> = <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The light is on&#34;</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Light</span>) <span style="color:#a6e22e">Off</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">isOn</span> = <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The light is off&#34;</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></li>
+<li>ICommand (命令介面)
+<pre tabindex="0"><code class="language-golang!" data-lang="golang!">// Command interface that all commands will implement
+type Command interface {
+    Execute()
+}
+</code></pre></li>
+<li>Invoker (命令接收者/請求操作者)
+<pre tabindex="0"><code class="language-golang!" data-lang="golang!">// Invoker that will invoke the command
+type RemoteControl struct {
+    command Command
+}
+
+func (r *RemoteControl) AddCommand(command Command) {
+    r.commands = append(r.commands, command)
+}
+
+func (r *RemoteControl) Execute() {
+    for _, cmd := range r.commands {
+        cmd.Execute()
+    }
+}
+</code></pre></li>
+<li>Receiver (執行命令/實際操作者)
+<pre tabindex="0"><code class="language-golang!" data-lang="golang!">// Receiver of the command
+type Light struct {
+    isOn bool
+}
+
+func (l *Light) On() {
+    l.isOn = true
+    fmt.Println(&#34;The light is on&#34;)
+}
+
+func (l *Light) Off() {
+    l.isOn = false
+    fmt.Println(&#34;The light is off&#34;)
+}
+</code></pre></li>
 </ol>
 <h3 id="code">Code</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// Concrete Command that implements the Command interface
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">LightOnCommand</span> <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">light</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Light</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LightOnCommand</span>) <span style="color:#a6e22e">Execute</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">light</span>.<span style="color:#a6e22e">On</span>()
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Concrete Command that implements the Command interface
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">LightOffCommand</span> <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">light</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Light</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LightOffCommand</span>) <span style="color:#a6e22e">Execute</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">light</span>.<span style="color:#a6e22e">Off</span>()
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create receiver
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">light</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Light</span>{}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create command and associate it with the receiver
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">lightOnCommand</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">LightOnCommand</span>{<span style="color:#a6e22e">light</span>: <span style="color:#a6e22e">light</span>}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">lightOffCommand</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">LightOffCommand</span>{<span style="color:#a6e22e">light</span>: <span style="color:#a6e22e">light</span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create invoker
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">remoteControl</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">RemoteControl</span>{}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Set the command for the invoker and execute it
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">remoteControl</span>.<span style="color:#a6e22e">AddCommand</span>(<span style="color:#a6e22e">lightOnCommand</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">remoteControl</span>.<span style="color:#a6e22e">AddCommand</span>(<span style="color:#a6e22e">lightOffCommand</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">remoteControl</span>.<span style="color:#a6e22e">ExecuteAll</span>()
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="undo">Undo</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// Command interface that all commands will implement
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Command</span> <span style="color:#66d9ef">interface</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Execute</span>()
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Undo</span>() <span style="color:#75715e">// add
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LightOnCommand</span>) <span style="color:#a6e22e">Undo</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">light</span>.<span style="color:#a6e22e">Off</span>()
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LightOffCommand</span>) <span style="color:#a6e22e">Undo</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">light</span>.<span style="color:#a6e22e">On</span>()
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RemoteControl</span>) <span style="color:#a6e22e">PopCommand</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span>) &gt; <span style="color:#ae81ff">0</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span> = <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span>[:len(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RemoteControl</span>) <span style="color:#a6e22e">Undo</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span>) &gt; <span style="color:#ae81ff">0</span> {
-</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Get last one cmd
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#a6e22e">cmd</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span>[len(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cmd</span>.<span style="color:#a6e22e">Undo</span>()
-</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">PopCommand</span>() <span style="color:#75715e">// Remove the command after undo
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create receiver
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">light</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Light</span>{}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create command and associate it with the receiver
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">lightOnCommand</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">LightOnCommand</span>{<span style="color:#a6e22e">light</span>: <span style="color:#a6e22e">light</span>}
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">lightOffCommand</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">LightOffCommand</span>{<span style="color:#a6e22e">light</span>: <span style="color:#a6e22e">light</span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Create invoker
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">remoteControl</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">RemoteControl</span>{}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Set the command for the invoker and execute it
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">remoteControl</span>.<span style="color:#a6e22e">AddCommand</span>(<span style="color:#a6e22e">lightOnCommand</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">remoteControl</span>.<span style="color:#a6e22e">AddCommand</span>(<span style="color:#a6e22e">lightOffCommand</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">remoteControl</span>.<span style="color:#a6e22e">Execute</span>()
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">remoteControl</span>.<span style="color:#a6e22e">Undo</span>()
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="redo">Redo</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Command 接口
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Command</span> <span style="color:#66d9ef">interface</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Execute</span>()
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Undo</span>()
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// LightOnCommand 具体命令
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">LightOnCommand</span> <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">light</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Light</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LightOnCommand</span>) <span style="color:#a6e22e">Execute</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">light</span>.<span style="color:#a6e22e">On</span>()
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LightOnCommand</span>) <span style="color:#a6e22e">Undo</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">light</span>.<span style="color:#a6e22e">Off</span>()
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Light 设备
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Light</span> <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">brightness</span> <span style="color:#66d9ef">int</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Light</span>) <span style="color:#a6e22e">On</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">brightness</span> = <span style="color:#ae81ff">100</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Light is on&#34;</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Light</span>) <span style="color:#a6e22e">Off</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">brightness</span> = <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Light is off&#34;</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">RemoteControl</span> <span style="color:#66d9ef">struct</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">commands</span> []<span style="color:#a6e22e">Command</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">undoStack</span> []<span style="color:#a6e22e">Command</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">redoStack</span> []<span style="color:#a6e22e">Command</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 添加命令
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RemoteControl</span>) <span style="color:#a6e22e">AddCommand</span>(<span style="color:#a6e22e">command</span> <span style="color:#a6e22e">Command</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span> = append(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span>, <span style="color:#a6e22e">command</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 执行命令
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RemoteControl</span>) <span style="color:#a6e22e">PressButton</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">cmd</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cmd</span>.<span style="color:#a6e22e">Execute</span>()
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">undoStack</span> = append(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">undoStack</span>, <span style="color:#a6e22e">cmd</span>)
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">commands</span> = <span style="color:#66d9ef">nil</span> <span style="color:#75715e">// 清空当前命令
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">redoStack</span> = <span style="color:#66d9ef">nil</span> <span style="color:#75715e">// 清空重做栈
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 撤销命令
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RemoteControl</span>) <span style="color:#a6e22e">Undo</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">undoStack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cmd</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">undoStack</span>[len(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">undoStack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">undoStack</span> = <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">undoStack</span>[:len(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">undoStack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cmd</span>.<span style="color:#a6e22e">Undo</span>()
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">redoStack</span> = append(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">redoStack</span>, <span style="color:#a6e22e">cmd</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 重做命令
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">RemoteControl</span>) <span style="color:#a6e22e">Redo</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">redoStack</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cmd</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">redoStack</span>[len(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">redoStack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">redoStack</span> = <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">redoStack</span>[:len(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">redoStack</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cmd</span>.<span style="color:#a6e22e">Execute</span>()
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">undoStack</span> = append(<span style="color:#a6e22e">r</span>.<span style="color:#a6e22e">undoStack</span>, <span style="color:#a6e22e">cmd</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">light</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Light</span>{}
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">lightOn</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">LightOnCommand</span>{<span style="color:#a6e22e">light</span>: <span style="color:#a6e22e">light</span>}
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">remote</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">RemoteControl</span>{}
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">remote</span>.<span style="color:#a6e22e">AddCommand</span>(<span style="color:#a6e22e">lightOn</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">remote</span>.<span style="color:#a6e22e">PressButton</span>() <span style="color:#75715e">// 执行 LightOnCommand
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">remote</span>.<span style="color:#a6e22e">Undo</span>()        <span style="color:#75715e">// 撤销 LightOnCommand
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">remote</span>.<span style="color:#a6e22e">Redo</span>()        <span style="color:#75715e">// 重做 LightOnCommand
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></div><h3 id="conclusion">Conclusion</h3>
+<pre tabindex="0"><code class="language-golang!" data-lang="golang!">// Concrete Command that implements the Command interface
+type LightOnCommand struct {
+	light *Light
+}
+
+func (c *LightOnCommand) Execute() {
+	c.light.On()
+}
+
+// Concrete Command that implements the Command interface
+type LightOffCommand struct {
+	light *Light
+}
+
+func (c *LightOffCommand) Execute() {
+	c.light.Off()
+}
+
+func main() {
+	// Create receiver
+	light := &amp;Light{}
+
+	// Create command and associate it with the receiver
+	lightOnCommand := &amp;LightOnCommand{light: light}
+	lightOffCommand := &amp;LightOffCommand{light: light}
+
+	// Create invoker
+	remoteControl := &amp;RemoteControl{}
+
+	// Set the command for the invoker and execute it
+	remoteControl.AddCommand(lightOnCommand)
+	remoteControl.AddCommand(lightOffCommand)
+	remoteControl.ExecuteAll()
+}
+</code></pre><h3 id="undo">Undo</h3>
+<pre tabindex="0"><code class="language-golang!" data-lang="golang!">// Command interface that all commands will implement
+type Command interface {
+	Execute()
+	Undo() // add
+}
+
+func (c *LightOnCommand) Undo() {
+	c.light.Off()
+}
+
+func (c *LightOffCommand) Undo() {
+	c.light.On()
+}
+
+func (r *RemoteControl) PopCommand() {
+	if len(r.commands) &gt; 0 {
+		r.commands = r.commands[:len(r.commands)-1]
+	}
+}
+
+func (r *RemoteControl) Undo() {
+	if len(r.commands) &gt; 0 {
+		// Get last one cmd
+		cmd := r.commands[len(r.commands)-1]
+		cmd.Undo()
+		r.PopCommand() // Remove the command after undo
+	}
+}
+</code></pre><pre tabindex="0"><code class="language-golang!" data-lang="golang!">func main() {
+	// Create receiver
+	light := &amp;Light{}
+
+	// Create command and associate it with the receiver
+	lightOnCommand := &amp;LightOnCommand{light: light}
+	lightOffCommand := &amp;LightOffCommand{light: light}
+
+	// Create invoker
+	remoteControl := &amp;RemoteControl{}
+
+	// Set the command for the invoker and execute it
+	remoteControl.AddCommand(lightOnCommand)
+	remoteControl.AddCommand(lightOffCommand)
+	remoteControl.Execute()
+	remoteControl.Undo()
+}
+</code></pre><h2 id="redo">Redo</h2>
+<pre tabindex="0"><code class="language-golang!" data-lang="golang!">package main
+
+import &#34;fmt&#34;
+
+// Command 接口
+type Command interface {
+    Execute()
+    Undo()
+}
+
+// LightOnCommand 具体命令
+type LightOnCommand struct {
+    light *Light
+}
+
+func (c *LightOnCommand) Execute() {
+    c.light.On()
+}
+
+func (c *LightOnCommand) Undo() {
+    c.light.Off()
+}
+
+// Light 设备
+type Light struct {
+    brightness int
+}
+
+func (l *Light) On() {
+    l.brightness = 100
+    fmt.Println(&#34;Light is on&#34;)
+}
+
+func (l *Light) Off() {
+    l.brightness = 0
+    fmt.Println(&#34;Light is off&#34;)
+}
+
+type RemoteControl struct {
+    commands []Command
+    undoStack []Command
+    redoStack []Command
+}
+
+// 添加命令
+func (r *RemoteControl) AddCommand(command Command) {
+    r.commands = append(r.commands, command)
+}
+
+// 执行命令
+func (r *RemoteControl) PressButton() {
+    for _, cmd := range r.commands {
+        cmd.Execute()
+        r.undoStack = append(r.undoStack, cmd)
+    }
+    r.commands = nil // 清空当前命令
+    r.redoStack = nil // 清空重做栈
+}
+
+// 撤销命令
+func (r *RemoteControl) Undo() {
+    if len(r.undoStack) == 0 {
+        return
+    }
+    cmd := r.undoStack[len(r.undoStack)-1]
+    r.undoStack = r.undoStack[:len(r.undoStack)-1]
+    cmd.Undo()
+    r.redoStack = append(r.redoStack, cmd)
+}
+
+// 重做命令
+func (r *RemoteControl) Redo() {
+    if len(r.redoStack) == 0 {
+        return
+    }
+    cmd := r.redoStack[len(r.redoStack)-1]
+    r.redoStack = r.redoStack[:len(r.redoStack)-1]
+    cmd.Execute()
+    r.undoStack = append(r.undoStack, cmd)
+}
+
+func main() {
+    light := &amp;Light{}
+    lightOn := &amp;LightOnCommand{light: light}
+    
+    remote := &amp;RemoteControl{}
+    remote.AddCommand(lightOn)
+    remote.PressButton() // 执行 LightOnCommand
+    remote.Undo()        // 撤销 LightOnCommand
+    remote.Redo()        // 重做 LightOnCommand
+}
+</code></pre><h3 id="conclusion">Conclusion</h3>
 <ol>
 <li>Queue , Stack</li>
 </ol></div>

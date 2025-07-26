@@ -467,42 +467,42 @@ $$</p>
 <li>Use attention probability matrix dots value matrix</li>
 </ol>
 <h3 id="implementation">Implementation</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># vector to probability</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">soft_max</span>(z):
-</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>exp(z)
-</span></span><span style="display:flex;"><span>    print(np<span style="color:#f92672">.</span>sum(t, axis<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>))
-</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>exp(z) <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>expand_dims(np<span style="color:#f92672">.</span>sum(t, axis<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>), <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># attention demo</span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;attention demo&#34;</span>)
-</span></span><span style="display:flex;"><span>Query <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([
-</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>],
-</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>],
-</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>]
-</span></span><span style="display:flex;"><span>])
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Key <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([
-</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>],
-</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">0</span>],
-</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>])
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Value <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([
-</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>],
-</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">0</span>],
-</span></span><span style="display:flex;"><span>    [<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">3</span>]
-</span></span><span style="display:flex;"><span>])
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> Query <span style="color:#f92672">@</span> Key<span style="color:#f92672">.</span>T
-</span></span><span style="display:flex;"><span>print(scores)
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> soft_max(scores)
-</span></span><span style="display:flex;"><span>print(scores)
-</span></span><span style="display:flex;"><span>out <span style="color:#f92672">=</span> scores <span style="color:#f92672">@</span> Value
-</span></span><span style="display:flex;"><span>print(out)
-</span></span></code></pre></div><h2 id="muti-head-self-attension-mechanism">Muti-Head Self-Attension Mechanism</h2>
+<pre tabindex="0"><code class="language-python!" data-lang="python!">import numpy as np
+
+# vector to probability
+def soft_max(z):
+    t = np.exp(z)
+    print(np.sum(t, axis=-1))
+    a = np.exp(z) / np.expand_dims(np.sum(t, axis=-1), -1)
+    return a
+
+# attention demo
+print(&#34;attention demo&#34;)
+Query = np.array([
+    [1,0,2],
+    [2,2,2],
+    [2,1,3]
+])
+
+Key = np.array([
+    [0,1,1],
+    [4,4,0],
+    [2,3,1]
+])
+
+Value = np.array([
+    [1,2,3],
+    [2,8,0],
+    [2,6,3]
+])
+
+scores = Query @ Key.T
+print(scores)
+scores = soft_max(scores)
+print(scores)
+out = scores @ Value
+print(out)
+</code></pre><h2 id="muti-head-self-attension-mechanism">Muti-Head Self-Attension Mechanism</h2>
 <p>多頭自注意力（Multi-Head Self-Attention）是Transformer模型中一個重要的組成部分，它在處理序列數據時具有強大的特徵提取能力。以下是將單頭自注意力改成多頭自注意力的過程：</p>
 <h3 id="多頭自注意力的步驟">多頭自注意力的步驟</h3>
 <p>在多頭自注意力（Multi-Head Self-Attention）中，<strong>並不</strong>是直接切分輸入，而是通過多個線性投影來分別計算不同的查詢（Query）、鍵（Key）和值（Value）。這些投影之後的查詢、鍵和值矩陣被分配到不同的頭進行注意力計算。以下是詳細解釋：</p>
@@ -560,53 +560,53 @@ Q_i = XW_Q^i, \quad K_i = XW_K^i, \quad V_i = XW_V^i
 <h3 id="總結">總結</h3>
 <p>多頭自注意力的核心在於對輸入進行線性投影，並不是直接切分輸入。這種方法可以讓模型在不同的頭之間學習不同的特徵表示，使得整個模型更具表達能力和靈活性。每個頭處理的數據都是從輸入投影而來，而不是直接分割輸入數據。</p>
 <h3 id="implementation-1">Implementation</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># vector to probability</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">soft_max</span>(z):
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># z_max = np.max(z, axis=-1, keepdims=True)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># t = np.exp(z - z_max)</span>
-</span></span><span style="display:flex;"><span>    t <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>exp(z)
-</span></span><span style="display:flex;"><span>    print(np<span style="color:#f92672">.</span>sum(t, axis<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>))
-</span></span><span style="display:flex;"><span>    a <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>exp(z) <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>expand_dims(np<span style="color:#f92672">.</span>sum(t, axis<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span>), <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># attention for Encoder</span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;attention for Encoder&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>values_length <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-</span></span><span style="display:flex;"><span>num_attention_heads <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
-</span></span><span style="display:flex;"><span>hidden_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">768</span>
-</span></span><span style="display:flex;"><span>attention_head_size <span style="color:#f92672">=</span> hidden_size <span style="color:#f92672">//</span> num_attention_heads
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Query <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(values_length, hidden_size)
-</span></span><span style="display:flex;"><span>Key <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(values_length, hidden_size)
-</span></span><span style="display:flex;"><span>Value <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(values_length, hidden_size)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Query <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(Query, [values_length, num_attention_heads, attention_head_size])
-</span></span><span style="display:flex;"><span>Key <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(Key, [values_length, num_attention_heads, attention_head_size])
-</span></span><span style="display:flex;"><span>Value <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(Value, [values_length, num_attention_heads, attention_head_size])
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(Query))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Query <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>transpose(Query, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>])
-</span></span><span style="display:flex;"><span>Key <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>transpose(Key, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>])
-</span></span><span style="display:flex;"><span>Value <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>transpose(Value, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>])
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(Query))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> Query <span style="color:#f92672">@</span> np<span style="color:#f92672">.</span>transpose(Key, [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]) <span style="color:#f92672">/</span> np<span style="color:#f92672">.</span>sqrt(attention_head_size)
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(np<span style="color:#f92672">.</span>transpose(Key, [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>])))
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(scores))
-</span></span><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> soft_max(scores)
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(scores))
-</span></span><span style="display:flex;"><span>out <span style="color:#f92672">=</span> scores <span style="color:#f92672">@</span> Value
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(out))
-</span></span><span style="display:flex;"><span>out <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>transpose(out, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>])
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(out))
-</span></span><span style="display:flex;"><span>out <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(out, [values_length , <span style="color:#ae81ff">768</span>])
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Output Projection Matrix</span>
-</span></span><span style="display:flex;"><span>print(np<span style="color:#f92672">.</span>shape(out))
-</span></span></code></pre></div><h2 id="the-main-difference-between-self-attension-and-attension">The main difference between self-attension and attension</h2>
+<pre tabindex="0"><code class="language-python!" data-lang="python!">import numpy as np
+
+# vector to probability
+def soft_max(z):
+    # z_max = np.max(z, axis=-1, keepdims=True)
+    # t = np.exp(z - z_max)
+    t = np.exp(z)
+    print(np.sum(t, axis=-1))
+    a = np.exp(z) / np.expand_dims(np.sum(t, axis=-1), -1)
+    return a
+
+# attention for Encoder
+print(&#34;attention for Encoder&#34;)
+
+values_length = 3
+num_attention_heads = 8
+hidden_size = 768
+attention_head_size = hidden_size // num_attention_heads
+
+Query = np.random.rand(values_length, hidden_size)
+Key = np.random.rand(values_length, hidden_size)
+Value = np.random.rand(values_length, hidden_size)
+
+Query = np.reshape(Query, [values_length, num_attention_heads, attention_head_size])
+Key = np.reshape(Key, [values_length, num_attention_heads, attention_head_size])
+Value = np.reshape(Value, [values_length, num_attention_heads, attention_head_size])
+print(np.shape(Query))
+
+Query = np.transpose(Query, [1, 0, 2])
+Key = np.transpose(Key, [1, 0, 2])
+Value = np.transpose(Value, [1, 0, 2])
+print(np.shape(Query))
+
+scores = Query @ np.transpose(Key, [0, 2, 1]) / np.sqrt(attention_head_size)
+print(np.shape(np.transpose(Key, [0, 2, 1])))
+print(np.shape(scores))
+scores = soft_max(scores)
+print(np.shape(scores))
+out = scores @ Value
+print(np.shape(out))
+out = np.transpose(out, [1, 0, 2])
+print(np.shape(out))
+out = np.reshape(out, [values_length , 768])
+
+# Output Projection Matrix
+print(np.shape(out))
+</code></pre><h2 id="the-main-difference-between-self-attension-and-attension">The main difference between self-attension and attension</h2>
 <ul>
 <li>
 <p>Attention 是在兩個不同的序列之間建立聯繫，比如翻譯中的源語言和目標語言
