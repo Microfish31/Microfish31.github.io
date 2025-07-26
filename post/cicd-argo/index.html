@@ -192,7 +192,7 @@
 
     ,
         "url" : "https:\/\/microfish31.github.io\/post\/cicd-argo\/",
-        "wordCount" : "509",
+        "wordCount" : "507",
         "genre" : [ ],
         "keywords" : [ 
       
@@ -418,16 +418,11 @@
 <h4 id="system-structure">System structure</h4>
 <p><img src="/images/cicd/argo_system.png" alt="argo_system"></p>
 <h4 id="helm-repo">Helm repo</h4>
+<pre><code>&gt; You need gitlab repo token to let ArgoCD pull your repo.  
+&gt; [Create a project access token](https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html#create-a-project-access-token)
+</code></pre>
 <ul>
-<li>
-<p><a href="https://gitlab.com/leadtek/argo-example-apps/-/tree/argo-nginx?ref_type=heads">Gitlab - argo-example-apps</a></p>
-<blockquote>
-<p>You need gitlab repo token to let ArgoCD pull your repo.<br>
-<a href="https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html#create-a-project-access-token">Create a project access token</a></p>
-</blockquote>
-</li>
-<li>
-<p>helm-nginx folder</p>
+<li>helm-nginx folder
 <pre tabindex="0"><code>.
 ├── CHANGELOG.md
 ├── Chart.lock
@@ -454,8 +449,7 @@
 └── values.yaml
 
 1 directory, 22 files
-</code></pre><p><a href="https://gitlab.com/leadtek/argo-example-apps/-/tree/argo-nginx/helm-nginx?ref_type=heads">helm-nginx</a></p>
-</li>
+</code></pre></li>
 </ul>
 <h2 id="my-task">My task</h2>
 <ul>
@@ -483,7 +477,7 @@
 <li>Use the specified repo, path, and target revision.
 <ul>
 <li>In ArgoCD:</li>
-<li>REPO URL: <code>https://oauth2:&lt;your_token&gt;@gitlab.com/leadtek/argo-example-apps.git</code></li>
+<li>REPO URL: <code>https://oauth2:&lt;your_token&gt;.git</code></li>
 <li>PATH: <code>helm-nginx</code></li>
 <li>TARGET REVISION: <code>argo-nginx</code> (branch in GitLab)</li>
 </ul>
